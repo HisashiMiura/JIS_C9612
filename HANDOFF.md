@@ -18,7 +18,7 @@ cd docs && make html                  # ドキュメントのビルド → docs/
 ```
 
 - Python 3.12
-- ドキュメント: Sphinx 8 以上 / MyST Parser / sphinx-book-theme(`docs/requirements.txt`)
+- ドキュメント: Sphinx 8 以上 / MyST Parser / sphinx-rtd-theme(`docs/requirements.txt`)
 
 ## JIS 原本の扱い
 
@@ -43,7 +43,7 @@ cd docs && make html                  # ドキュメントのビルド → docs/
 
 ## 決定事項
 
-- ドキュメントは Sphinx + MyST(Markdown)で書く。テーマは sphinx-book-theme。
+- ドキュメントは Sphinx + MyST(Markdown)で書く。テーマは Read the Docs テーマ(sphinx-rtd-theme)。
 - ドキュメントは 4 章構成(上表)。JIS にない独自の追加・解釈は「4. 評価方法の根拠」に内容と理由を記録する。
 - コミットは担当者が指示・確認してから行う(Claude に自動でコミットさせない)。
 - **ドキュメントを先に書き、それに合わせて実装する。** 「3. 評価方法」の計算手順と「4. 評価方法の根拠」の解釈を確定してから、コードとテストを書く。冷房 → 暖房 → APF の順に、この手順を一周ずつ進める。
@@ -79,6 +79,7 @@ cd docs && make html                  # ドキュメントのビルド → docs/
 
 ### 2026-11-17
 
+- ドキュメントのテーマを sphinx-book-theme から Read the Docs テーマに変更
 - 進め方を「ドキュメント先行」に決定。3 章(概要・冷房期間)と 4 章(冷房期間・共通事項)を執筆
 - 附属書 B(B.1 冷房、B.2 暖房、B.3 APF)を読み、計算プログラムの設計案 `DESIGN.md` を作成
 - `environment.yml`(conda 環境定義)を追加

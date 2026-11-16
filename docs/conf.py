@@ -39,9 +39,9 @@ exclude_patterns = [
     "requirements.txt",
 ]
 
-html_theme = "sphinx_book_theme"
+html_theme = "sphinx_rtd_theme"
 html_title = project
 html_static_path = ["_static"]
 html_theme_options = {
-    "show_toc_level": 2,
+    "navigation_depth": 3,
 }
