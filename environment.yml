@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - python=3.12
+  - matplotlib  # docs/figures/make_figures.py で図を作成する
   - pip
   - pip:
       - -r docs/requirements.txt

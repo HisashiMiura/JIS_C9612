@@ -20,9 +20,11 @@ div.math > span.eqno {
     white-space: nowrap;
 }
 
-/* 式の記号説明(「ここに、」〜「である。」)
+/* 記号の一覧
+   - where  : 式の記号説明(「ここに、」〜「である。」)
+   - symbols: 入力値などの記号の一覧(「ここに、」「である。」なし)
    MyST では次のように書く:
-     :::{div} where
+     :::{container} where
      ここに、
 
      $記号$
@@ -35,13 +37,23 @@ div.math > span.eqno {
     margin-bottom: 0;
 }
 
-.rst-content div.where > dl {
+.rst-content div.where > p:last-child {
+    margin-bottom: 24px;
+}
+
+.rst-content div.where > dl,
+.rst-content div.symbols > dl {
     display: grid;
     grid-template-columns: max-content auto;
     margin: 0 0 0 1em;
 }
 
-.rst-content div.where > dl > dt {
+.rst-content div.symbols > dl {
+    margin-bottom: 24px;
+}
+
+.rst-content div.where > dl > dt,
+.rst-content div.symbols > dl > dt {
     grid-column: 1;
     display: block;
     margin: 0;
@@ -52,21 +64,20 @@ div.math > span.eqno {
     color: inherit;
 }
 
-.rst-content div.where > dl > dd {
+.rst-content div.where > dl > dd,
+.rst-content div.symbols > dl > dd {
     grid-column: 2;
     margin: 0;
     padding: 0;
 }
 
-.rst-content div.where > dl > dd::before {
+.rst-content div.where > dl > dd::before,
+.rst-content div.symbols > dl > dd::before {
     content: "：";
 }
 
-.rst-content div.where > dl > dd > p {
+.rst-content div.where > dl > dd > p,
+.rst-content div.symbols > dl > dd > p {
     display: inline;
     margin: 0;
-}
-
-.rst-content div.where > p:last-child {
-    margin-bottom: 24px;
 }
