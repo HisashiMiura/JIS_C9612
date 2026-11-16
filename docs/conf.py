@@ -29,7 +29,7 @@ myst_heading_anchors = 3
 numfig = True
 # 式番号は章(ページ)ごとに 1 から振り直し、章番号を付けない: (1), (2), ...
 math_numfig = False
-math_eqref_format = "式({number})"
+math_eqref_format = "式 ({number})"
 
 # reference/ は JIS 原本(著作物)の置き場なのでビルド対象外
 exclude_patterns = [
