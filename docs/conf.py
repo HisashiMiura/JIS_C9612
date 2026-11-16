@@ -27,7 +27,8 @@ myst_heading_anchors = 3
 
 # 式・図・表に番号を振る
 numfig = True
-math_numfig = True
+# 式番号は章(ページ)ごとに 1 から振り直し、章番号を付けない: (1), (2), ...
+math_numfig = False
 math_eqref_format = "式({number})"
 
 # reference/ は JIS 原本(著作物)の置き場なのでビルド対象外
@@ -42,6 +43,7 @@ exclude_patterns = [
 html_theme = "sphinx_rtd_theme"
 html_title = project
 html_static_path = ["_static"]
+html_css_files = ["custom.css"]
 html_theme_options = {
     "navigation_depth": 3,
 }

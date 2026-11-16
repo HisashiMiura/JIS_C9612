@@ -1,0 +1,72 @@
+/* 別行立て数式の式番号を、式の右側の同じ行に表示する。
+   MathJax 3 は数式をブロック要素として描画するため、
+   既定のスタイル(span.eqno の float: right)では式番号が式の上の行に出てしまう。 */
+div.math {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+div.math > mjx-container[display="true"] {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+div.math > span.eqno {
+    order: 1;
+    float: none;
+    white-space: nowrap;
+}
+
+/* 式の記号説明(「ここに、」〜「である。」)
+   MyST では次のように書く:
+     :::{div} where
+     ここに、
+
+     $記号$
+     : 内容, 単位
+
+     である。
+     :::
+   記号の列と説明の列に分け、説明の前に「:」を付けて縦にそろえる。 */
+.rst-content div.where > p {
+    margin-bottom: 0;
+}
+
+.rst-content div.where > dl {
+    display: grid;
+    grid-template-columns: max-content auto;
+    margin: 0 0 0 1em;
+}
+
+.rst-content div.where > dl > dt {
+    grid-column: 1;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-weight: normal;
+    color: inherit;
+}
+
+.rst-content div.where > dl > dd {
+    grid-column: 2;
+    margin: 0;
+    padding: 0;
+}
+
+.rst-content div.where > dl > dd::before {
+    content: "：";
+}
+
+.rst-content div.where > dl > dd > p {
+    display: inline;
+    margin: 0;
+}
+
+.rst-content div.where > p:last-child {
+    margin-bottom: 24px;
+}
