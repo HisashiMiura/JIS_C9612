@@ -67,13 +67,13 @@ $C_\mathrm{HSE}$
   - 内容
   - 単位
 * - $\Phi_{\mathrm{ful},t100}$
-  - 定格冷房能力(表示値)
+  - 定格冷房能力 (表示値)
   - W
 * - $\Phi_\mathrm{ful}(35)$, $P_\mathrm{ful}(35)$
-  - 冷房能力試験(外気 35 ℃)での定格運転能力・消費電力
+  - 冷房能力試験 (外気 35 ℃)での定格運転能力・消費電力
   - W
 * - $\Phi_\mathrm{haf}(35)$, $P_\mathrm{haf}(35)$
-  - 冷房能力試験(外気 35 ℃)での中間運転能力・消費電力
+  - 冷房能力試験 (外気 35 ℃)での中間運転能力・消費電力
   - W
 ```
 
@@ -85,12 +85,32 @@ $C_\mathrm{HSE}$
 ### 試験値の補完
 
 外気 29 ℃での値は、外気 35 ℃の試験値に係数を掛けて求める (附属書 B の表 B.1、{ref}`r-c-coef`)。
-添字 $x$ は、定格 (ful)または中間 (haf)を表す。
 
 $$
 \Phi_x(29) = 1.077 \times \Phi_x(35), \qquad
 P_x(29) = 0.914 \times P_x(35)
 $$ (eq-c-coef29)
+
+:::{container} where
+ここに、
+
+$\Phi_x(29)$
+: 外気温度 29 ℃における運転能力 (W)
+
+$\Phi_x(35)$
+: 外気温度 35 ℃における運転能力 (W)
+
+$P_x(29)$
+: 外気温度 29 ℃における運転消費電力 (W)
+
+$P_x(35)$
+: 外気温度 35 ℃における運転消費電力 (W)
+
+$x$
+: 運転の種類を表す添字。ful は定格運転、haf は中間運転を表す
+
+である。
+:::
 
 効率低下係数 $C_\mathrm{D}$ は、試験を行わず 0.25 とする (附属書 B の表 B.1、B.1.5.3.3)。
 
@@ -102,9 +122,51 @@ $$
 \Phi_x(t) = \Phi_x(35) + \frac{\Phi_x(29) - \Phi_x(35)}{29 - 35}\,(t - 35)
 $$ (eq-c-cap)
 
+:::{container} where
+ここに、
+
+$\Phi_x(t)$
+: 外気温度 $t$ における運転能力 (W)
+
+$\Phi_x(35)$
+: 外気温度 35 ℃における運転能力 (W)
+
+$\Phi_x(29)$
+: 外気温度 29 ℃における運転能力 (W)
+
+$t$
+: 外気温度 (℃)
+
+$x$
+: 運転の種類を表す添字。ful は定格運転、haf は中間運転を表す
+
+である。
+:::
+
 $$
 P_x(t) = P_x(35) + \frac{P_x(29) - P_x(35)}{29 - 35}\,(t - 35)
 $$ (eq-c-pow)
+
+:::{container} where
+ここに、
+
+$P_x(t)$
+: 外気温度 $t$ における運転消費電力 (W)
+
+$P_x(35)$
+: 外気温度 35 ℃における運転消費電力 (W)
+
+$P_x(29)$
+: 外気温度 29 ℃における運転消費電力 (W)
+
+$t$
+: 外気温度 (℃)
+
+$x$
+: 運転の種類を表す添字。ful は定格運転、haf は中間運転を表す
+
+である。
+:::
 
 特性線は、定格運転 ($x = \mathrm{ful}$)と中間運転 ($x = \mathrm{haf}$)の 2 本を用いる。
 
@@ -116,14 +178,35 @@ $$
 L_\mathrm{c}(t) = \Phi_{\mathrm{ful},t100} \times \frac{t - t_0}{t_{100} - t_0}
 $$ (eq-c-load)
 
-ここに、$t_0 = 23$ ℃、$t_{100} = 35$ ℃ とする。
+:::{container} where
+ここに、
+
+$L_\mathrm{c}(t)$
+: 外気温度 $t$ における想定冷房空調負荷 (W)
+
+$\Phi_{\mathrm{ful},t100}$
+: 定格冷房能力 (表示値) (W)
+
+$t$
+: 外気温度 (℃)
+
+$t_0$
+: 想定冷房空調負荷が 0 となる外気温度 (℃)
+
+$t_{100}$
+: 想定冷房空調負荷が定格冷房能力と等しくなる外気温度 (℃)
+
+である。
+:::
+
+なお、$t_0 = 23$ ℃、$t_{100} = 35$ ℃ とする。
 
 ### 外気温度の発生時間
 
 外気温度 $t_j$ とその発生時間 $n_j$ は、附属書 B の表 B.3 (東京)による ({numref}`tbl-c-bins`)。
 特定地域の値を用いる場合は、附属書 B の B.1.9 による。
 
-```{list-table} 冷房期間の外気温度の発生時間(東京)
+```{list-table} 冷房期間の外気温度の発生時間 (東京)
 :name: tbl-c-bins
 :header-rows: 1
 :stub-columns: 1
@@ -178,6 +261,27 @@ $$
 t = \frac{a_2 - a_1}{b_1 - b_2}
 $$ (eq-intersection)
 
+:::{container} where
+ここに、
+
+$t$
+: 2 直線の交点の外気温度 (℃)
+
+$a_1$
+: 一方の直線の切片 (W)
+
+$b_1$
+: 一方の直線の傾き (W/℃)
+
+$a_2$
+: 他方の直線の切片 (W)
+
+$b_2$
+: 他方の直線の傾き (W/℃)
+
+である。
+:::
+
 ### 温度区分ごとの計算
 
 温度区分 $j$ ごとに、想定冷房空調負荷 $L_\mathrm{c}(t_j)$ と能力を比べて運転状態を判定する ({ref}`r-region`)。
@@ -189,13 +293,49 @@ $$
 X(t_j) = \frac{L_\mathrm{c}(t_j)}{\Phi(t_j)}
 $$ (eq-c-x)
 
+:::{container} where
+ここに、
+
+$X(t_j)$
+: 外気温度 $t_j$ における運転率 (−)
+
+$L_\mathrm{c}(t_j)$
+: 外気温度 $t_j$ における想定冷房空調負荷 (W)
+
+$\Phi(t_j)$
+: 外気温度 $t_j$ において断続運転するときの運転能力 (W)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
 $$
 F_\mathrm{PL}(t_j) = 1 - C_\mathrm{D}\,[1 - X(t_j)]
 $$ (eq-c-plf)
 
+:::{container} where
+ここに、
+
+$F_\mathrm{PL}(t_j)$
+: 外気温度 $t_j$ における部分負荷率 (−)
+
+$C_\mathrm{D}$
+: 効率低下係数 (−)
+
+$X(t_j)$
+: 外気温度 $t_j$ における運転率 (−)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
 運転状態は {numref}`tbl-c-inverter` の 3 つに分かれる。
 
-```{list-table} 運転状態ごとの空調負荷と消費電力(冷房)
+```{list-table} 運転状態ごとの空調負荷と消費電力 (冷房)
 :name: tbl-c-inverter
 :header-rows: 1
 
@@ -227,14 +367,86 @@ E_\mathrm{ER,haf}(t_\mathrm{c}) = \frac{\Phi_\mathrm{haf}(t_\mathrm{c})}{P_\math
 E_\mathrm{ER,ful}(t_\mathrm{b}) = \frac{\Phi_\mathrm{ful}(t_\mathrm{b})}{P_\mathrm{ful}(t_\mathrm{b})}
 $$ (eq-c-eer-ends)
 
+:::{container} where
+ここに、
+
+$E_\mathrm{ER,haf}(t_\mathrm{c})$
+: 外気温度 $t_\mathrm{c}$ における中間運転のエネルギー消費効率 (−)
+
+$E_\mathrm{ER,ful}(t_\mathrm{b})$
+: 外気温度 $t_\mathrm{b}$ における定格運転のエネルギー消費効率 (−)
+
+$\Phi_\mathrm{haf}(t_\mathrm{c})$
+: 外気温度 $t_\mathrm{c}$ における中間運転能力 (W)
+
+$P_\mathrm{haf}(t_\mathrm{c})$
+: 外気温度 $t_\mathrm{c}$ における中間運転消費電力 (W)
+
+$\Phi_\mathrm{ful}(t_\mathrm{b})$
+: 外気温度 $t_\mathrm{b}$ における定格運転能力 (W)
+
+$P_\mathrm{ful}(t_\mathrm{b})$
+: 外気温度 $t_\mathrm{b}$ における定格運転消費電力 (W)
+
+$t_\mathrm{c}$
+: 想定冷房空調負荷と中間運転能力が等しくなる外気温度 (℃)
+
+$t_\mathrm{b}$
+: 想定冷房空調負荷と定格運転能力が等しくなる外気温度 (℃)
+
+である。
+:::
+
 $$
 E_\mathrm{ER,hf}(t_j) = E_\mathrm{ER,haf}(t_\mathrm{c})
 + \frac{E_\mathrm{ER,ful}(t_\mathrm{b}) - E_\mathrm{ER,haf}(t_\mathrm{c})}{t_\mathrm{b} - t_\mathrm{c}}\,(t_j - t_\mathrm{c})
 $$ (eq-c-eer-hf)
 
+:::{container} where
+ここに、
+
+$E_\mathrm{ER,hf}(t_j)$
+: 外気温度 $t_j$ で可変運転したときのエネルギー消費効率 (−)
+
+$E_\mathrm{ER,haf}(t_\mathrm{c})$
+: 外気温度 $t_\mathrm{c}$ における中間運転のエネルギー消費効率 (−)
+
+$E_\mathrm{ER,ful}(t_\mathrm{b})$
+: 外気温度 $t_\mathrm{b}$ における定格運転のエネルギー消費効率 (−)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+$t_\mathrm{b}$
+: 想定冷房空調負荷と定格運転能力が等しくなる外気温度 (℃)
+
+$t_\mathrm{c}$
+: 想定冷房空調負荷と中間運転能力が等しくなる外気温度 (℃)
+
+である。
+:::
+
 $$
 P_\mathrm{hf}(t_j) = \frac{L_\mathrm{c}(t_j)}{E_\mathrm{ER,hf}(t_j)}
 $$ (eq-c-phf)
+
+:::{container} where
+ここに、
+
+$P_\mathrm{hf}(t_j)$
+: 外気温度 $t_j$ で可変運転したときの消費電力 (W)
+
+$L_\mathrm{c}(t_j)$
+: 外気温度 $t_j$ における想定冷房空調負荷 (W)
+
+$E_\mathrm{ER,hf}(t_j)$
+: 外気温度 $t_j$ で可変運転したときのエネルギー消費効率 (−)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
 
 ### 冷房期間の合計と効率
 
@@ -244,15 +456,66 @@ $$
 L_\mathrm{CST} = \sum_j L(t_j)\,n_j
 $$ (eq-cstl)
 
+:::{container} where
+ここに、
+
+$L_\mathrm{CST}$
+: 冷房期間総合空調負荷 (CSTL) (Wh)
+
+$L(t_j)$
+: 温度区分 $j$ における空調負荷 (W)
+
+$n_j$
+: 温度区分 $j$ の発生時間 (h)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
 $$
 C_\mathrm{CSE} = \sum_j P(t_j)\,n_j
 $$ (eq-csec)
+
+:::{container} where
+ここに、
+
+$C_\mathrm{CSE}$
+: 冷房期間消費電力量 (CSEC) (Wh)
+
+$P(t_j)$
+: 温度区分 $j$ における消費電力 (W)
+
+$n_j$
+: 温度区分 $j$ の発生時間 (h)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
 
 冷房期間エネルギー消費効率 (CSPF)$F_\mathrm{CSP}$ は、次式による (附属書 B の式 (B.1))。
 
 $$
 F_\mathrm{CSP} = \frac{L_\mathrm{CST}}{C_\mathrm{CSE}}
 $$ (eq-cspf)
+
+:::{container} where
+ここに、
+
+$F_\mathrm{CSP}$
+: 冷房期間エネルギー消費効率 (CSPF) (−)
+
+$L_\mathrm{CST}$
+: 冷房期間総合空調負荷 (CSTL) (Wh)
+
+$C_\mathrm{CSE}$
+: 冷房期間消費電力量 (CSEC) (Wh)
+
+である。
+:::
 
 ## 暖房期間
 
