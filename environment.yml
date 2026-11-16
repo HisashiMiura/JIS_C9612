@@ -1,0 +1,8 @@
+name: JIS_C9612
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r docs/requirements.txt
