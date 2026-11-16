@@ -1,0 +1,5 @@
+# Copyrighted JIS documents (keep local only)
+docs/reference/
+
+# macOS
+.DS_Store
