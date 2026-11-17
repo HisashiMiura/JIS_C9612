@@ -38,6 +38,7 @@ cd docs && make html                  # ドキュメントのビルド → docs/
 | `docs/02_usage.md` | 2. プログラムの使い方 |
 | `docs/03_method.md` | 3. 評価方法(実装する計算方法) |
 | `docs/04_rationale.md` | 4. 評価方法の根拠(JIS の該当条項、独自の解釈とその理由) |
+| `docs/05_symbols.md` | 5. 記号の対応 (本書の記号と JIS 附属書 B の記号の対応表) |
 | `docs/figures/` | ドキュメントの図(SVG)と、それを作るスクリプト `make_figures.py` |
 | `docs/_ext/` | 自作の Sphinx 拡張(図・表の番号から章番号を取り除く `chapter_numbering.py`) |
 | `environment.yml` | conda 環境定義 |
@@ -56,6 +57,7 @@ cd docs && make html                  # ドキュメントのビルド → docs/
 - 条件によって計算が変わる値は、表に詰め込まず、場合分けの式 (`\begin{cases}`) で書く。必要に応じて図で補い、条件ごとに小見出しを立てて説明する(例: 3 章「温度区分ごとの空調負荷と消費電力」)。
 - 本文で附属書 B を文の主語にするときは「JIS C 9612:2013 の附属書 B は」と書き、どの規格の附属書かを明示する。かっこ内の出典表示 (附属書 B の式 (B.xx)) は「附属書 B」のままでよい。
 - **記号は冷房 (c) と暖房 (h) で書き分ける。** 期間によって意味が変わる記号は、添字の先頭に c または h を付ける(例: $\Phi_\mathrm{c,ful}(t)$、$\Phi_\mathrm{h,ful,f}(t)$、$P_\mathrm{c}(t_j)$、$X_\mathrm{h}(t_j)$、$F_\mathrm{c,PL}$、$t_{\mathrm{h},0}$、$n_{\mathrm{c},j}$)。温度区分ごとに処理する空調負荷は冷房 $Q_\mathrm{c}(t_j)$、暖房 $Q_\mathrm{h}(t_j)$ (暖房は常に $Q_\mathrm{h} = L_\mathrm{h}$ で、負荷が必ず満たされることを示す)。定格冷房能力 (表示値) は暖房の式でも $\Phi_{\mathrm{c,ful},t100}$。EER (冷房のみ)、COP (暖房のみ)、交点温度 (冷房 $t_\mathrm{b}$, $t_\mathrm{c}$、暖房 $t_\mathrm{a}$ など)、期間合計 ($L_\mathrm{CST}$ など)、$t_j$ は付けない。JIS 附属書 B の記号とは異なるので、照合時は注意する。
+- 3 章に記号を追加・変更したら、`docs/05_symbols.md` の対応表も更新する (3 章の記号説明に出る記号はすべて表に載せる)。
 - エネルギー消費効率の記号は、略語をひとまとまりで書く: 冷房 $\mathrm{EER}_\mathrm{haf}(t_\mathrm{c})$、暖房 $\mathrm{COP}_\mathrm{hf,f}(t_j)$ など。JIS の $E_\mathrm{ER}$、$C_\mathrm{OP}$ (文字 + 添字) は使わない (C の記号 $C_\mathrm{HSE}$ などと紛れるため)。
 - 暖房の着霜時の値には、特性線に限らず必ず添字 f を付ける (例: $X_\mathrm{h,f}$、$F_\mathrm{h,PL,f}$、$P_\mathrm{h,hf,f}$、$P_\mathrm{h,RH,f}$)。無着霜時と着霜時は場合分けの式にせず、別々の式で定義する。
 - 別行立ての数式には 1 つの式だけを書く(1 行に 2 式を並べない)。$x$ のような代表の添字でまとめず、ful(定格)、haf(中間)などに書き分ける。式の数が増えてもよい。
@@ -93,6 +95,7 @@ cd docs && make html                  # ドキュメントのビルド → docs/
 
 ### 2026-11-17
 
+- 「5. 記号の対応」を追加 (本書の記号と附属書 B の記号の対応表)
 - エネルギー消費効率の記号を $E_\mathrm{ER}$、$C_\mathrm{OP}$ から $\mathrm{EER}$、$\mathrm{COP}$ に変更
 - 暖房の運転率・部分負荷率・可変運転の消費電力・補助電熱装置の消費電力を、無着霜時と着霜時 (添字 f) で別々の式に分けた
 - 記号を冷房 (c)・暖房 (h) で書き分けるよう 3 章・4 章・図を変更。冷房・暖房の処理する空調負荷を $Q_\mathrm{c}(t_j)$、$Q_\mathrm{h}(t_j)$ とした

@@ -83,3 +83,9 @@ div.math > span.eqno {
     display: inline;
     margin: 0;
 }
+
+/* 表のセル内で文字を折り返す(Read the Docs テーマは既定で折り返さず、長い説明の表が横にはみ出すため) */
+.rst-content table.docutils td,
+.rst-content table.docutils th {
+    white-space: normal;
+}
