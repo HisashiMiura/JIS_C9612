@@ -53,7 +53,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 | `docs/figures/` | ドキュメントの図(SVG)と、それを作るスクリプト `make_figures.py` |
 | `docs/_ext/` | 自作の Sphinx 拡張(図・表の番号から章番号を取り除く `chapter_numbering.py`) |
 | `README.md` | リポジトリの説明 (概要、インストール、使い方、ドキュメント、注意事項) |
-| `.readthedocs.yaml` | Read the Docs のビルド設定 (Python 3.12、`docs/requirements.txt`、警告があれば失敗)。公開先 https://jis-c9612.readthedocs.io/ja/latest/ |
+| `.readthedocs.yaml` | Read the Docs のビルド設定 (Python 3.12、`docs/requirements.txt`、警告があれば失敗)。公開先 https://jis-c9612.readthedocs.io/ (言語と最新版のページに転送される) |
 | `.github/workflows/tests.yml` | GitHub Actions でテストを実行する設定 (main へのプッシュとプルリクエストのたび)。README のバッジはこの結果を表示する |
 | `.vscode/` | VS Code の設定。テストエクスプローラーで pytest を実行する (`settings.json`)、Python 拡張機能を推奨する (`extensions.json`)。インタープリターは各自「Python: Select Interpreter」で JIS_C9612 を選ぶ |
 | `environment.yml` | conda 環境定義 |
@@ -115,6 +115,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 
 ### 2026-11-18
 
+- Read the Docs のプロジェクト (slug: jis-c9612、言語: Japanese) を登録済み。README のリンクを言語に依存しないトップページに、バッジを app.readthedocs.org の URL に変更
 - Read the Docs の設定 `.readthedocs.yaml` を追加し、README にドキュメントへのリンクとバッジを付けた (Read the Docs 側のプロジェクト登録は担当者が行う)
 - GitHub Actions の actions/checkout と actions/setup-python を v7 に更新 (Node.js 20 廃止の警告への対応。v7 は Node.js 24 で動く)
 - VS Code のテストエクスプローラーで pytest を実行する設定 (`.vscode/`) を追加

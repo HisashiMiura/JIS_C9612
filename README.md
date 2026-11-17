@@ -1,7 +1,7 @@
 # JIS C 9612 APF 計算プログラム
 
 [![tests](https://github.com/HisashiMiura/JIS_C9612/actions/workflows/tests.yml/badge.svg)](https://github.com/HisashiMiura/JIS_C9612/actions/workflows/tests.yml)
-[![docs](https://readthedocs.org/projects/jis-c9612/badge/?version=latest)](https://jis-c9612.readthedocs.io/ja/latest/)
+[![docs](https://app.readthedocs.org/projects/jis-c9612/badge/?version=latest)](https://jis-c9612.readthedocs.io/)
 
 JIS C 9612:2013 (ルームエアコンディショナ) 附属書 B に基づいて、回転数制御形ルームエアコンの通年エネルギー消費効率 (APF) を計算する Python プログラムと、その計算方法を説明するドキュメントである。
 
@@ -100,7 +100,7 @@ print(r.f_ap, r.cooling.f_csp, r.heating.f_hsp)
 
 ## ドキュメント
 
-計算方法とプログラムの説明は `docs/` にある (Sphinx + MyST)。Read the Docs で公開している: <https://jis-c9612.readthedocs.io/ja/latest/>
+計算方法とプログラムの説明は `docs/` にある (Sphinx + MyST)。Read the Docs で公開している: <https://jis-c9612.readthedocs.io/>
 
 手元でビルドする場合は次のようにする。`docs/_build/html/index.html` ができる。
 
