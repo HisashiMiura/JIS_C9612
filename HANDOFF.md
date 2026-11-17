@@ -53,6 +53,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 | `docs/figures/` | ドキュメントの図(SVG)と、それを作るスクリプト `make_figures.py` |
 | `docs/_ext/` | 自作の Sphinx 拡張(図・表の番号から章番号を取り除く `chapter_numbering.py`) |
 | `README.md` | リポジトリの説明 (概要、インストール、使い方、ドキュメント、注意事項) |
+| `.github/workflows/tests.yml` | GitHub Actions でテストを実行する設定 (main へのプッシュとプルリクエストのたび)。README のバッジはこの結果を表示する |
 | `environment.yml` | conda 環境定義 |
 | `DESIGN.md` | 計算プログラムの設計メモ(計算の流れ、モジュール構成、規格の解釈、未決事項) |
 
@@ -112,6 +113,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 
 ### 2026-11-18
 
+- GitHub Actions でテストを実行するワークフローを追加し、README にテストのバッジを付けた
 - `README.md` を作成
 
 ### 2026-11-17

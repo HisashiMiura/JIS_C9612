@@ -1,0 +1,27 @@
+# テストを GitHub Actions で実行する。README のバッジはこのワークフローの結果を表示する。
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 計算プログラム (標準ライブラリだけで動く) と pytest を入れる
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+
+      - name: Run tests
+        run: python -m pytest -v

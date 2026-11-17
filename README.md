@@ -1,5 +1,7 @@
 # JIS C 9612 APF 計算プログラム
 
+[![tests](https://github.com/HisashiMiura/JIS_C9612/actions/workflows/tests.yml/badge.svg)](https://github.com/HisashiMiura/JIS_C9612/actions/workflows/tests.yml)
+
 JIS C 9612:2013 (ルームエアコンディショナ) 附属書 B に基づいて、回転数制御形ルームエアコンの通年エネルギー消費効率 (APF) を計算する Python プログラムと、その計算方法を説明するドキュメントである。
 
 - 冷房能力試験・暖房能力試験の値から、冷房期間エネルギー消費効率 (CSPF)、暖房期間エネルギー消費効率 (HSPF)、APF を計算する。
