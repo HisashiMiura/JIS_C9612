@@ -417,7 +417,7 @@ L 80.60625 98.3076
 " style="fill: none; stroke: #eb6834; stroke-width: 2; stroke-linecap: square"/>
     </g>
     <g id="text_29">
-     <!-- 定格運転能力 $\Phi_\mathrm{ful}(t)$ -->
+     <!-- 定格運転能力 $\Phi_\mathrm{c,ful}(t)$ -->
      <g style="fill: #0b0b0b" transform="translate(87.80625 101.4576)">
       <text>
        <tspan x="0" y="-0.4375" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">定</tspan>
@@ -428,24 +428,26 @@ L 80.60625 98.3076
        <tspan x="45.000305" y="-0.4375" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">力</tspan>
        <tspan x="54.000366" y="-0.4375" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
        <tspan x="56.997391" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">Φ</tspan>
-       <tspan x="72.374734" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="79.414774" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
-       <tspan x="64.167508" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
-       <tspan x="66.385428" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">u</tspan>
-       <tspan x="70.378299" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">l</tspan>
-       <tspan x="75.885965" y="-0.4375" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
+       <tspan x="79.068484" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="86.108524" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="64.167508" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">c</tspan>
+       <tspan x="67.631277" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">,</tspan>
+       <tspan x="70.861258" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
+       <tspan x="73.079178" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">u</tspan>
+       <tspan x="77.072049" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">l</tspan>
+       <tspan x="82.579715" y="-0.4375" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
       </text>
      </g>
     </g>
     <g id="line2d_35">
-     <path d="M 66.20625 112.1676 
-L 73.40625 112.1676 
-L 80.60625 112.1676 
+     <path d="M 66.20625 112.8876 
+L 73.40625 112.8876 
+L 80.60625 112.8876 
 " style="fill: none; stroke: #1baf7a; stroke-width: 2; stroke-linecap: square"/>
     </g>
     <g id="text_30">
-     <!-- 中間運転能力 $\Phi_\mathrm{haf}(t)$ -->
-     <g style="fill: #0b0b0b" transform="translate(87.80625 115.3176)">
+     <!-- 中間運転能力 $\Phi_\mathrm{c,haf}(t)$ -->
+     <g style="fill: #0b0b0b" transform="translate(87.80625 116.0376)">
       <text>
        <tspan x="0" y="-0.4375" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">中</tspan>
        <tspan x="9.000061" y="-0.4375" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">間</tspan>
@@ -455,12 +457,14 @@ L 80.60625 112.1676
        <tspan x="45.000305" y="-0.4375" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">力</tspan>
        <tspan x="54.000366" y="-0.4375" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
        <tspan x="56.997391" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">Φ</tspan>
-       <tspan x="74.484988" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="81.525027" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
-       <tspan x="64.167508" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">h</tspan>
-       <tspan x="68.160379" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">a</tspan>
-       <tspan x="72.020975" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
-       <tspan x="77.996219" y="-0.4375" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
+       <tspan x="81.178738" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="88.218777" y="-0.4375" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="64.167508" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">c</tspan>
+       <tspan x="67.631277" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">,</tspan>
+       <tspan x="70.861258" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">h</tspan>
+       <tspan x="74.854129" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">a</tspan>
+       <tspan x="78.714725" y="0.912496" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
+       <tspan x="84.689969" y="-0.4375" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
       </text>
      </g>
     </g>

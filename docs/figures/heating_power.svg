@@ -601,54 +601,55 @@ z
    </g>
    <g id="legend_1">
     <g id="line2d_30">
-     <path d="M 328.41 60.5236 
-L 336.51 60.5236 
-L 344.61 60.5236 
+     <path d="M 324.18 60.5236 
+L 332.28 60.5236 
+L 340.38 60.5236 
 " style="fill: none; stroke: #0b0b0b; stroke-width: 2; stroke-linecap: square"/>
      <g>
-      <use xlink:href="#ma70c2c70fe" x="336.51" y="60.5236" style="fill: #ffffff; stroke: #0b0b0b; stroke-width: 1.2"/>
+      <use xlink:href="#ma70c2c70fe" x="332.28" y="60.5236" style="fill: #ffffff; stroke: #0b0b0b; stroke-width: 1.2"/>
      </g>
     </g>
     <g id="text_27">
-     <!-- 消費電力 $P(t_j)$ (補助電熱装置を含む) -->
-     <g style="fill: #0b0b0b" transform="translate(351.81 63.6736)">
+     <!-- 消費電力 $P_\mathrm{h}(t_j)$ (補助電熱装置を含む) -->
+     <g style="fill: #0b0b0b" transform="translate(347.58 63.6736)">
       <text>
        <tspan x="0" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">消</tspan>
        <tspan x="9.000061" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">費</tspan>
        <tspan x="18.000122" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">電</tspan>
        <tspan x="27.000183" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">力</tspan>
        <tspan x="36.000244" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
-       <tspan x="56.97222" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
-       <tspan x="59.969244" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="63.299261" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">補</tspan>
-       <tspan x="72.299323" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">助</tspan>
-       <tspan x="81.299384" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">電</tspan>
-       <tspan x="90.299445" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">熱</tspan>
-       <tspan x="99.299506" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">装</tspan>
-       <tspan x="108.299567" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">置</tspan>
-       <tspan x="117.299628" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">を</tspan>
-       <tspan x="126.299689" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">含</tspan>
-       <tspan x="135.29975" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">む</tspan>
-       <tspan x="144.299811" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="61.211185" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
+       <tspan x="64.208209" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="67.538226" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">補</tspan>
+       <tspan x="76.538287" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">助</tspan>
+       <tspan x="85.538348" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">電</tspan>
+       <tspan x="94.538409" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">熱</tspan>
+       <tspan x="103.53847" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">装</tspan>
+       <tspan x="112.538531" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">置</tspan>
+       <tspan x="121.538593" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">を</tspan>
+       <tspan x="130.538654" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">含</tspan>
+       <tspan x="139.538715" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">む</tspan>
+       <tspan x="148.538776" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">)</tspan>
        <tspan x="38.997269" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">P</tspan>
-       <tspan x="47.935745" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
-       <tspan x="44.424515" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="53.460989" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
-       <tspan x="51.464554" y="0.943746" style="font-style: oblique; font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">j</tspan>
+       <tspan x="52.17471" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
+       <tspan x="44.424515" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">h</tspan>
+       <tspan x="48.66348" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="57.699954" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="55.703519" y="0.943746" style="font-style: oblique; font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">j</tspan>
       </text>
      </g>
     </g>
     <g id="patch_30">
-     <path d="M 328.41 78.7936 
-L 344.61 78.7936 
-L 344.61 72.4936 
-L 328.41 72.4936 
+     <path d="M 324.18 78.7936 
+L 340.38 78.7936 
+L 340.38 72.4936 
+L 324.18 72.4936 
 z
 " style="fill: #2a78d6; opacity: 0.35"/>
     </g>
     <g id="text_28">
-     <!-- うち補助電熱装置 $P_\mathrm{RH}(t_j)$ -->
-     <g style="fill: #0b0b0b" transform="translate(351.81 78.7936)">
+     <!-- うち補助電熱装置 $P_\mathrm{h,RH}(t_j)$ -->
+     <g style="fill: #0b0b0b" transform="translate(347.58 78.7936)">
       <text>
        <tspan x="0" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">う</tspan>
        <tspan x="9.000061" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">ち</tspan>
@@ -660,12 +661,14 @@ z
        <tspan x="63.000427" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">置</tspan>
        <tspan x="72.000488" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
        <tspan x="74.997513" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">P</tspan>
-       <tspan x="93.29678" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
-       <tspan x="80.424759" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">R</tspan>
-       <tspan x="84.802151" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">H</tspan>
-       <tspan x="89.78555" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="98.822025" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
-       <tspan x="96.825589" y="0.943746" style="font-style: oblique; font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">j</tspan>
+       <tspan x="100.519632" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
+       <tspan x="80.424759" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">h</tspan>
+       <tspan x="84.41763" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">,</tspan>
+       <tspan x="87.64761" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">R</tspan>
+       <tspan x="92.025003" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">H</tspan>
+       <tspan x="97.008401" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="106.044876" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="104.048441" y="0.943746" style="font-style: oblique; font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">j</tspan>
       </text>
      </g>
     </g>

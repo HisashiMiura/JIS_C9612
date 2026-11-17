@@ -395,7 +395,7 @@ L 86.00625 48.994
 " style="fill: none; stroke-dasharray: 4.8,3.6; stroke-dashoffset: 0; stroke: #eb6834; stroke-width: 1.2"/>
     </g>
     <g id="text_25">
-     <!-- 定格運転消費電力 $P_\mathrm{ful}(t)$ -->
+     <!-- 定格運転消費電力 $P_\mathrm{c,ful}(t)$ -->
      <g style="fill: #0b0b0b" transform="translate(93.20625 52.144)">
       <text>
        <tspan x="0" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">定</tspan>
@@ -408,24 +408,26 @@ L 86.00625 48.994
        <tspan x="63.000427" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">力</tspan>
        <tspan x="72.000488" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
        <tspan x="74.997513" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">P</tspan>
-       <tspan x="92.143216" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
-       <tspan x="80.424759" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
-       <tspan x="82.642679" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">u</tspan>
-       <tspan x="86.63555" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">l</tspan>
-       <tspan x="88.631985" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="95.672025" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="98.836966" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
+       <tspan x="80.424759" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">c</tspan>
+       <tspan x="83.888528" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">,</tspan>
+       <tspan x="87.118509" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
+       <tspan x="89.336429" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">u</tspan>
+       <tspan x="93.3293" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">l</tspan>
+       <tspan x="95.325735" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="102.365775" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
       </text>
      </g>
     </g>
     <g id="line2d_29">
-     <path d="M 66.20625 62.854 
-L 76.10625 62.854 
-L 86.00625 62.854 
+     <path d="M 66.20625 63.574 
+L 76.10625 63.574 
+L 86.00625 63.574 
 " style="fill: none; stroke-dasharray: 4.8,3.6; stroke-dashoffset: 0; stroke: #1baf7a; stroke-width: 1.2"/>
     </g>
     <g id="text_26">
-     <!-- 中間運転消費電力 $P_\mathrm{haf}(t)$ -->
-     <g style="fill: #0b0b0b" transform="translate(93.20625 66.004)">
+     <!-- 中間運転消費電力 $P_\mathrm{c,haf}(t)$ -->
+     <g style="fill: #0b0b0b" transform="translate(93.20625 66.724)">
       <text>
        <tspan x="0" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">中</tspan>
        <tspan x="9.000061" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">間</tspan>
@@ -437,24 +439,26 @@ L 86.00625 62.854
        <tspan x="63.000427" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">力</tspan>
        <tspan x="72.000488" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
        <tspan x="74.997513" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">P</tspan>
-       <tspan x="94.25347" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
-       <tspan x="80.424759" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">h</tspan>
-       <tspan x="84.41763" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">a</tspan>
-       <tspan x="88.278226" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
-       <tspan x="90.742239" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="97.782278" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="100.94722" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
+       <tspan x="80.424759" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">c</tspan>
+       <tspan x="83.888528" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">,</tspan>
+       <tspan x="87.118509" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">h</tspan>
+       <tspan x="91.11138" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">a</tspan>
+       <tspan x="94.971976" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">f</tspan>
+       <tspan x="97.435989" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="104.476028" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
       </text>
      </g>
     </g>
     <g id="line2d_30">
-     <path d="M 66.20625 76.714 
-L 76.10625 76.714 
-L 86.00625 76.714 
+     <path d="M 66.20625 78.154 
+L 76.10625 78.154 
+L 86.00625 78.154 
 " style="fill: none; stroke: #0b0b0b; stroke-width: 2; stroke-linecap: square"/>
     </g>
     <g id="text_27">
-     <!-- 消費電力 $P(t_j)$ -->
-     <g style="fill: #0b0b0b" transform="translate(93.20625 79.864)">
+     <!-- 消費電力 $P_\mathrm{c}(t_j)$ -->
+     <g style="fill: #0b0b0b" transform="translate(93.20625 81.304)">
       <text>
        <tspan x="0" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">消</tspan>
        <tspan x="9.000061" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">費</tspan>
@@ -462,21 +466,22 @@ L 86.00625 76.714
        <tspan x="27.000183" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">力</tspan>
        <tspan x="36.000244" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b"> </tspan>
        <tspan x="38.997269" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">P</tspan>
-       <tspan x="47.935745" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
-       <tspan x="44.424515" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
-       <tspan x="53.460989" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
-       <tspan x="51.464554" y="0.943746" style="font-style: oblique; font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">j</tspan>
+       <tspan x="51.645609" y="-0.40625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">t</tspan>
+       <tspan x="44.424515" y="0.943746" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">c</tspan>
+       <tspan x="48.134378" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">(</tspan>
+       <tspan x="57.170853" y="-0.40625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #0b0b0b">)</tspan>
+       <tspan x="55.174417" y="0.943746" style="font-style: oblique; font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #0b0b0b">j</tspan>
       </text>
      </g>
     </g>
     <g id="line2d_31">
      <g>
-      <use xlink:href="#ma70c2c70fe" x="76.10625" y="91.834" style="fill: #ffffff; stroke: #0b0b0b; stroke-width: 1.2"/>
+      <use xlink:href="#ma70c2c70fe" x="76.10625" y="93.274" style="fill: #ffffff; stroke: #0b0b0b; stroke-width: 1.2"/>
      </g>
     </g>
     <g id="text_28">
      <!-- 温度区分 $t_j$ ごとの値 -->
-     <g style="fill: #0b0b0b" transform="translate(93.20625 94.984)">
+     <g style="fill: #0b0b0b" transform="translate(93.20625 96.424)">
       <text>
        <tspan x="0" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">温</tspan>
        <tspan x="9.000061" y="-0.40625" style="font-size: 9px; font-family: 'Hiragino Sans'; fill: #0b0b0b">度</tspan>

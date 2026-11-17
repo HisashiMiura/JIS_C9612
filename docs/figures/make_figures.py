@@ -75,8 +75,8 @@ def cooling_regions() -> None:
 
     # 線
     ax.plot([T0, x1], [load(T0), load(x1)], color=C_LOAD, lw=2, label="想定冷房空調負荷 $L_\\mathrm{c}(t)$")
-    ax.plot(xs, [cap(PHI_FUL_35, x) for x in xs], color=C_FUL, lw=2, label="定格運転能力 $\\Phi_\\mathrm{ful}(t)$")
-    ax.plot(xs, [cap(PHI_HAF_35, x) for x in xs], color=C_HAF, lw=2, label="中間運転能力 $\\Phi_\\mathrm{haf}(t)$")
+    ax.plot(xs, [cap(PHI_FUL_35, x) for x in xs], color=C_FUL, lw=2, label="定格運転能力 $\\Phi_\\mathrm{c,ful}(t)$")
+    ax.plot(xs, [cap(PHI_HAF_35, x) for x in xs], color=C_HAF, lw=2, label="中間運転能力 $\\Phi_\\mathrm{c,haf}(t)$")
 
     # 交点
     for t, phi35 in ((tc, PHI_HAF_35), (tb, PHI_FUL_35)):
@@ -153,14 +153,14 @@ def cooling_power() -> None:
     # 参考: 定格運転・中間運転の消費電力特性(細い破線)
     xs = [x0, x1]
     ax.plot(xs, [pow_(P_FUL_35, x) for x in xs], color=C_FUL, lw=1.2, ls=(0, (4, 3)),
-            label="定格運転消費電力 $P_\\mathrm{ful}(t)$")
+            label="定格運転消費電力 $P_\\mathrm{c,ful}(t)$")
     ax.plot(xs, [pow_(P_HAF_35, x) for x in xs], color=C_HAF, lw=1.2, ls=(0, (4, 3)),
-            label="中間運転消費電力 $P_\\mathrm{haf}(t)$")
+            label="中間運転消費電力 $P_\\mathrm{c,haf}(t)$")
 
     # 消費電力 P(t)(太線)と温度区分ごとの値(点)
     n = 400
     ts = [T0 + (x1 - T0) * i / n for i in range(n + 1)]
-    ax.plot(ts, [power(t)[0] for t in ts], color=INK, lw=2, label="消費電力 $P(t_j)$", zorder=3)
+    ax.plot(ts, [power(t)[0] for t in ts], color=INK, lw=2, label="消費電力 $P_\\mathrm{c}(t_j)$", zorder=3)
     tj = list(range(24, 39))
     ax.plot(tj, [power(t)[0] for t in tj], "o", ms=5, mfc="white", mec=INK, mew=1.2, zorder=4,
             label="温度区分 $t_j$ ごとの値")
@@ -345,9 +345,9 @@ def heating_power() -> None:
         ax.text((a + b) / 2, 2350, labels[st], ha="center", va="center", color=INK, fontsize=9.5)
 
     ax.plot(tj, [v[0] for v in vals], color=INK, lw=2, zorder=3, marker="o", ms=5, mfc="white", mec=INK, mew=1.2,
-            label="消費電力 $P(t_j)$ (補助電熱装置を含む)")
+            label="消費電力 $P_\\mathrm{h}(t_j)$ (補助電熱装置を含む)")
     ax.bar(tj, [v[1] for v in vals], width=0.6, color=C_LOAD, alpha=0.35, zorder=2,
-           label="うち補助電熱装置 $P_\\mathrm{RH}(t_j)$")
+           label="うち補助電熱装置 $P_\\mathrm{h,RH}(t_j)$")
     ax.text(-0.75, 50, "着霜領域", ha="center", va="bottom", color=INK_2, fontsize=9)
 
     ax.set_xlim(-8, 17)
@@ -380,7 +380,7 @@ def cooling_plf() -> None:
     fig.patch.set_facecolor("white")
     ax.plot([0, 1], [1 - C_D, 1], color=C_LOAD, lw=2, zorder=3)
     ax.axhline(1.0, color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
-    ax.text(0.02, 1.006, "効率の低下がない場合 ($F_\\mathrm{PL} = 1$)", color=INK_2, fontsize=9, va="bottom")
+    ax.text(0.02, 1.006, "効率の低下がない場合 ($F_\\mathrm{c,PL} = 1$)", color=INK_2, fontsize=9, va="bottom")
 
     # 例: 外気 26 ℃
     t = 26.0
@@ -389,17 +389,17 @@ def cooling_plf() -> None:
     ax.plot([x, x], [0.7, f], color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
     ax.plot([0, x], [f, f], color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
     ax.plot(x, f, "o", ms=8, mfc="white", mec=INK, mew=1.5, zorder=4)
-    ax.annotate(f"例: 外気 26 ℃\n$X$ = {x:.3f}、$F_\\mathrm{{PL}}$ = {f:.3f}", (x, f), xytext=(14, -34),
+    ax.annotate(f"例: 外気 26 ℃\n$X_\\mathrm{{c}}$ = {x:.3f}、$F_\\mathrm{{c,PL}}$ = {f:.3f}", (x, f), xytext=(14, -34),
                 textcoords="offset points", color=INK, fontsize=9)
     ax.annotate("停止時間が長いほど\n効率が下がる", (0.08, 1 - C_D * 0.92), xytext=(18, 34),
                 textcoords="offset points", color=INK_2, fontsize=9,
                 arrowprops={"arrowstyle": "-", "color": INK_2, "lw": 0.8})
-    ax.text(0.0, 1 - C_D - 0.012, f"$1 - C_\\mathrm{{D}}$ = {1 - C_D:.2f}", color=INK, fontsize=9, ha="left", va="top")
+    ax.text(0.0, 1 - C_D - 0.012, f"$1 - C_\\mathrm{{c,D}}$ = {1 - C_D:.2f}", color=INK, fontsize=9, ha="left", va="top")
 
     ax.set_xlim(0, 1.0)
     ax.set_ylim(0.7, 1.04)
-    ax.set_xlabel("運転率 $X(t_j)$")
-    ax.set_ylabel("部分負荷率 $F_\\mathrm{PL}(t_j)$")
+    ax.set_xlabel("運転率 $X_\\mathrm{c}(t_j)$")
+    ax.set_ylabel("部分負荷率 $F_\\mathrm{c,PL}(t_j)$")
     _style(ax)
     fig.tight_layout()
     fig.savefig(OUT_DIR / "cooling_plf.svg", metadata={"Date": None})
@@ -424,9 +424,9 @@ def cooling_eer() -> None:
     n = 100
     ts = [x0 + (x1 - x0) * i / n for i in range(n + 1)]
     ax.plot(ts, [cap(PHI_HAF_35, t) / pow_(P_HAF_35, t) for t in ts], color=C_HAF, lw=1.2, ls=(0, (4, 3)),
-            label="中間運転の EER $\\Phi_\\mathrm{haf}(t) / P_\\mathrm{haf}(t)$")
+            label="中間運転の EER $\\Phi_\\mathrm{c,haf}(t) / P_\\mathrm{c,haf}(t)$")
     ax.plot(ts, [cap(PHI_FUL_35, t) / pow_(P_FUL_35, t) for t in ts], color=C_FUL, lw=1.2, ls=(0, (4, 3)),
-            label="定格運転の EER $\\Phi_\\mathrm{ful}(t) / P_\\mathrm{ful}(t)$")
+            label="定格運転の EER $\\Phi_\\mathrm{c,ful}(t) / P_\\mathrm{c,ful}(t)$")
     # 補間線
     ax.plot([tc, tb], [e_haf, e_ful], color=INK, lw=2, zorder=3,
             label="可変運転の EER $E_\\mathrm{ER,hf}(t_j)$")
