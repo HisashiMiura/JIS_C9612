@@ -1,0 +1,11 @@
+{
+    // VS Code のテスト機能 (テストエクスプローラー) で pytest を実行する。
+    // Python のインタープリターは PC ごとに場所が違うので、ここでは指定しない。
+    // コマンドパレットの「Python: Select Interpreter」で conda 環境 JIS_C9612 を選ぶ。
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.cwd": "${workspaceFolder}"
+}

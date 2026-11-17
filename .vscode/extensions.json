@@ -1,0 +1,6 @@
+{
+    // このリポジトリで使う拡張機能。入っていなければ、VS Code がインストールを勧める。
+    "recommendations": [
+        "ms-python.python"
+    ]
+}

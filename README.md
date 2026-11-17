@@ -132,6 +132,8 @@ python -m pytest
 
 各計算段階のテストのほか、プログラムに書いた式番号がドキュメントの式番号と一致するかを確かめるテストがある。
 
+VS Code では、Python 拡張機能を入れ、コマンドパレットの「Python: Select Interpreter」で conda 環境 `JIS_C9612` を選ぶと、テストエクスプローラーからテストを実行できる (設定は `.vscode/settings.json`)。
+
 ## リポジトリの構成
 
 | パス | 内容 |
