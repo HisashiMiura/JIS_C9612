@@ -68,7 +68,9 @@ div.math > span.eqno {
 .rst-content div.symbols > dl > dd {
     grid-column: 2;
     margin: 0;
-    padding: 0;
+    /* 折り返した行を「:」の右側にそろえる(「:」は全角 1 文字分) */
+    padding: 0 0 0 1em;
+    text-indent: -1em;
 }
 
 .rst-content div.where > dl > dd::before,
