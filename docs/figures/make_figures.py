@@ -424,16 +424,16 @@ def cooling_eer() -> None:
     n = 100
     ts = [x0 + (x1 - x0) * i / n for i in range(n + 1)]
     ax.plot(ts, [cap(PHI_HAF_35, t) / pow_(P_HAF_35, t) for t in ts], color=C_HAF, lw=1.2, ls=(0, (4, 3)),
-            label="中間運転の EER $\\Phi_\\mathrm{c,haf}(t) / P_\\mathrm{c,haf}(t)$")
+            label="中間運転で連続運転 $\\Phi_\\mathrm{c,haf}(t) / P_\\mathrm{c,haf}(t)$")
     ax.plot(ts, [cap(PHI_FUL_35, t) / pow_(P_FUL_35, t) for t in ts], color=C_FUL, lw=1.2, ls=(0, (4, 3)),
-            label="定格運転の EER $\\Phi_\\mathrm{c,ful}(t) / P_\\mathrm{c,ful}(t)$")
+            label="定格運転で連続運転 $\\Phi_\\mathrm{c,ful}(t) / P_\\mathrm{c,ful}(t)$")
     # 補間線
     ax.plot([tc, tb], [e_haf, e_ful], color=INK, lw=2, zorder=3,
-            label="可変運転の EER $E_\\mathrm{ER,hf}(t_j)$")
+            label="可変運転 $\\mathrm{EER}_\\mathrm{hf}(t_j)$")
     tj = [t for t in range(30, 36)]
     ax.plot(tj, [e_hf(t) for t in tj], "o", ms=5, mfc="white", mec=INK, mew=1.2, zorder=4,
             label="温度区分 $t_j$ ごとの値")
-    for t, e, name in ((tc, e_haf, "$E_\\mathrm{ER,haf}(t_\\mathrm{c})$"), (tb, e_ful, "$E_\\mathrm{ER,ful}(t_\\mathrm{b})$")):
+    for t, e, name in ((tc, e_haf, "$\\mathrm{EER}_\\mathrm{haf}(t_\\mathrm{c})$"), (tb, e_ful, "$\\mathrm{EER}_\\mathrm{ful}(t_\\mathrm{b})$")):
         ax.plot(t, e, "o", ms=9, mfc=INK, mec=INK, zorder=5)
         ax.annotate(f"{name}\n= {e:.2f}", (t, e), xytext=(8, 6), textcoords="offset points", color=INK, fontsize=9)
         ax.plot([t, t], [3.45, 6.8], color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)

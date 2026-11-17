@@ -378,7 +378,7 @@ $t_j$
 可変運転での消費電力 $P_\mathrm{c,hf}(t_j)$ は、想定冷房空調負荷を可変運転のエネルギー消費効率で割って求める (附属書 B の式 (B.15))。
 
 $$
-P_\mathrm{c,hf}(t_j) = \frac{L_\mathrm{c}(t_j)}{E_\mathrm{ER,hf}(t_j)}
+P_\mathrm{c,hf}(t_j) = \frac{L_\mathrm{c}(t_j)}{\mathrm{EER}_\mathrm{hf}(t_j)}
 $$ (eq-c-phf)
 
 :::{container} where
@@ -390,7 +390,7 @@ $P_\mathrm{c,hf}(t_j)$
 $L_\mathrm{c}(t_j)$
 : 外気温度 $t_j$ における想定冷房空調負荷 (W)
 
-$E_\mathrm{ER,hf}(t_j)$
+$\mathrm{EER}_\mathrm{hf}(t_j)$
 : 外気温度 $t_j$ で可変運転したときのエネルギー消費効率 (−)
 
 $t_j$
@@ -399,23 +399,23 @@ $t_j$
 である。
 :::
 
-可変運転のエネルギー消費効率 $E_\mathrm{ER,hf}(t_j)$ は、交点温度 $t_\mathrm{c}$ での中間運転のエネルギー消費効率と、交点温度 $t_\mathrm{b}$ での定格運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.14))。
+可変運転のエネルギー消費効率 $\mathrm{EER}_\mathrm{hf}(t_j)$ は、交点温度 $t_\mathrm{c}$ での中間運転のエネルギー消費効率と、交点温度 $t_\mathrm{b}$ での定格運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.14))。
 
 $$
-E_\mathrm{ER,hf}(t_j) = E_\mathrm{ER,haf}(t_\mathrm{c})
-+ \frac{E_\mathrm{ER,ful}(t_\mathrm{b}) - E_\mathrm{ER,haf}(t_\mathrm{c})}{t_\mathrm{b} - t_\mathrm{c}}\,(t_j - t_\mathrm{c})
+\mathrm{EER}_\mathrm{hf}(t_j) = \mathrm{EER}_\mathrm{haf}(t_\mathrm{c})
++ \frac{\mathrm{EER}_\mathrm{ful}(t_\mathrm{b}) - \mathrm{EER}_\mathrm{haf}(t_\mathrm{c})}{t_\mathrm{b} - t_\mathrm{c}}\,(t_j - t_\mathrm{c})
 $$ (eq-c-eer-hf)
 
 :::{container} where
 ここに、
 
-$E_\mathrm{ER,hf}(t_j)$
+$\mathrm{EER}_\mathrm{hf}(t_j)$
 : 外気温度 $t_j$ で可変運転したときのエネルギー消費効率 (−)
 
-$E_\mathrm{ER,haf}(t_\mathrm{c})$
+$\mathrm{EER}_\mathrm{haf}(t_\mathrm{c})$
 : 外気温度 $t_\mathrm{c}$ における中間運転のエネルギー消費効率 (−)
 
-$E_\mathrm{ER,ful}(t_\mathrm{b})$
+$\mathrm{EER}_\mathrm{ful}(t_\mathrm{b})$
 : 外気温度 $t_\mathrm{b}$ における定格運転のエネルギー消費効率 (−)
 
 $t_j$
@@ -444,13 +444,13 @@ $t_\mathrm{c}$
 交点温度でのエネルギー消費効率は、次式による (附属書 B の式 (B.12)、(B.13))。
 
 $$
-E_\mathrm{ER,haf}(t_\mathrm{c}) = \frac{\Phi_\mathrm{c,haf}(t_\mathrm{c})}{P_\mathrm{c,haf}(t_\mathrm{c})}
+\mathrm{EER}_\mathrm{haf}(t_\mathrm{c}) = \frac{\Phi_\mathrm{c,haf}(t_\mathrm{c})}{P_\mathrm{c,haf}(t_\mathrm{c})}
 $$ (eq-c-eer-haf)
 
 :::{container} where
 ここに、
 
-$E_\mathrm{ER,haf}(t_\mathrm{c})$
+$\mathrm{EER}_\mathrm{haf}(t_\mathrm{c})$
 : 外気温度 $t_\mathrm{c}$ における中間運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{c,haf}(t_\mathrm{c})$
@@ -466,13 +466,13 @@ $t_\mathrm{c}$
 :::
 
 $$
-E_\mathrm{ER,ful}(t_\mathrm{b}) = \frac{\Phi_\mathrm{c,ful}(t_\mathrm{b})}{P_\mathrm{c,ful}(t_\mathrm{b})}
+\mathrm{EER}_\mathrm{ful}(t_\mathrm{b}) = \frac{\Phi_\mathrm{c,ful}(t_\mathrm{b})}{P_\mathrm{c,ful}(t_\mathrm{b})}
 $$ (eq-c-eer-ful)
 
 :::{container} where
 ここに、
 
-$E_\mathrm{ER,ful}(t_\mathrm{b})$
+$\mathrm{EER}_\mathrm{ful}(t_\mathrm{b})$
 : 外気温度 $t_\mathrm{b}$ における定格運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{c,ful}(t_\mathrm{b})$
@@ -1240,7 +1240,7 @@ $t_j$
 想定暖房空調負荷が中間運転能力を超え、定格運転能力以下のときは、能力を連続的に変えて、負荷とつり合う能力で運転する。無着霜時の消費電力 $P_\mathrm{h,hf}(t_j)$ と着霜時の消費電力 $P_\mathrm{h,hf,f}(t_j)$ は、想定暖房空調負荷をエネルギー消費効率 (COP)で割って求める (附属書 B の式 (B.48))。
 
 $$
-P_\mathrm{h,hf}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,hf}(t_j)}
+P_\mathrm{h,hf}(t_j) = \frac{L_\mathrm{h}(t_j)}{\mathrm{COP}_\mathrm{hf}(t_j)}
 $$ (eq-h-phf)
 
 :::{container} where
@@ -1252,7 +1252,7 @@ $P_\mathrm{h,hf}(t_j)$
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
-$C_\mathrm{OP,hf}(t_j)$
+$\mathrm{COP}_\mathrm{hf}(t_j)$
 : 外気温度 $t_j$ において、無着霜時に中間運転能力と定格運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
 $t_j$
@@ -1262,7 +1262,7 @@ $t_j$
 :::
 
 $$
-P_\mathrm{h,hf,f}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,hf,f}(t_j)}
+P_\mathrm{h,hf,f}(t_j) = \frac{L_\mathrm{h}(t_j)}{\mathrm{COP}_\mathrm{hf,f}(t_j)}
 $$ (eq-h-phf-f)
 
 :::{container} where
@@ -1274,7 +1274,7 @@ $P_\mathrm{h,hf,f}(t_j)$
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
-$C_\mathrm{OP,hf,f}(t_j)$
+$\mathrm{COP}_\mathrm{hf,f}(t_j)$
 : 外気温度 $t_j$ において、着霜時に中間運転能力と定格運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
 $t_j$
@@ -1283,22 +1283,22 @@ $t_j$
 である。
 :::
 
-無着霜時のエネルギー消費効率 $C_\mathrm{OP,hf}(t_j)$ は、交点温度 $t_\mathrm{a}$ での定格運転のエネルギー消費効率と、交点温度 $t_\mathrm{d}$ での中間運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.49)、{ref}`r-h-cop`)。
+無着霜時のエネルギー消費効率 $\mathrm{COP}_\mathrm{hf}(t_j)$ は、交点温度 $t_\mathrm{a}$ での定格運転のエネルギー消費効率と、交点温度 $t_\mathrm{d}$ での中間運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.49)、{ref}`r-h-cop`)。
 
 $$
-C_\mathrm{OP,hf}(t_j) = C_\mathrm{OP,ful}(t_\mathrm{a}) + \frac{C_\mathrm{OP,haf}(t_\mathrm{d}) - C_\mathrm{OP,ful}(t_\mathrm{a})}{t_\mathrm{d} - t_\mathrm{a}}\,(t_j - t_\mathrm{a})
+\mathrm{COP}_\mathrm{hf}(t_j) = \mathrm{COP}_\mathrm{ful}(t_\mathrm{a}) + \frac{\mathrm{COP}_\mathrm{haf}(t_\mathrm{d}) - \mathrm{COP}_\mathrm{ful}(t_\mathrm{a})}{t_\mathrm{d} - t_\mathrm{a}}\,(t_j - t_\mathrm{a})
 $$ (eq-h-cop-hf)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,hf}(t_j)$
+$\mathrm{COP}_\mathrm{hf}(t_j)$
 : 外気温度 $t_j$ において、無着霜時に中間運転能力と定格運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
-$C_\mathrm{OP,ful}(t_\mathrm{a})$
+$\mathrm{COP}_\mathrm{ful}(t_\mathrm{a})$
 : 外気温度 $t_\mathrm{a}$ における無着霜時の定格運転のエネルギー消費効率 (−)
 
-$C_\mathrm{OP,haf}(t_\mathrm{d})$
+$\mathrm{COP}_\mathrm{haf}(t_\mathrm{d})$
 : 外気温度 $t_\mathrm{d}$ における無着霜時の中間運転のエネルギー消費効率 (−)
 
 $t_\mathrm{a}$
@@ -1313,22 +1313,22 @@ $t_j$
 である。
 :::
 
-着霜時のエネルギー消費効率 $C_\mathrm{OP,hf,f}(t_j)$ は、交点温度 $t_\mathrm{g}$ での着霜時の定格運転のエネルギー消費効率と、交点温度 $t_\mathrm{e}$ での着霜時の中間運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.51))。
+着霜時のエネルギー消費効率 $\mathrm{COP}_\mathrm{hf,f}(t_j)$ は、交点温度 $t_\mathrm{g}$ での着霜時の定格運転のエネルギー消費効率と、交点温度 $t_\mathrm{e}$ での着霜時の中間運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.51))。
 
 $$
-C_\mathrm{OP,hf,f}(t_j) = C_\mathrm{OP,ful,f}(t_\mathrm{g}) + \frac{C_\mathrm{OP,haf,f}(t_\mathrm{e}) - C_\mathrm{OP,ful,f}(t_\mathrm{g})}{t_\mathrm{e} - t_\mathrm{g}}\,(t_j - t_\mathrm{g})
+\mathrm{COP}_\mathrm{hf,f}(t_j) = \mathrm{COP}_\mathrm{ful,f}(t_\mathrm{g}) + \frac{\mathrm{COP}_\mathrm{haf,f}(t_\mathrm{e}) - \mathrm{COP}_\mathrm{ful,f}(t_\mathrm{g})}{t_\mathrm{e} - t_\mathrm{g}}\,(t_j - t_\mathrm{g})
 $$ (eq-h-cop-hf-f)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,hf,f}(t_j)$
+$\mathrm{COP}_\mathrm{hf,f}(t_j)$
 : 外気温度 $t_j$ において、着霜時に中間運転能力と定格運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
-$C_\mathrm{OP,ful,f}(t_\mathrm{g})$
+$\mathrm{COP}_\mathrm{ful,f}(t_\mathrm{g})$
 : 外気温度 $t_\mathrm{g}$ における着霜時の定格運転のエネルギー消費効率 (−)
 
-$C_\mathrm{OP,haf,f}(t_\mathrm{e})$
+$\mathrm{COP}_\mathrm{haf,f}(t_\mathrm{e})$
 : 外気温度 $t_\mathrm{e}$ における着霜時の中間運転のエネルギー消費効率 (−)
 
 $t_\mathrm{g}$
@@ -1348,7 +1348,7 @@ $t_j$
 想定暖房空調負荷が定格運転能力を超え、最大運転能力以下のときは、定格運転能力より高い能力で、負荷とつり合うように運転する。無着霜時の消費電力 $P_\mathrm{h,fe}(t_j)$ と着霜時の消費電力 $P_\mathrm{h,fe,f}(t_j)$ は、想定暖房空調負荷をエネルギー消費効率で割って求める (附属書 B の式 (B.48))。
 
 $$
-P_\mathrm{h,fe}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,fe}(t_j)}
+P_\mathrm{h,fe}(t_j) = \frac{L_\mathrm{h}(t_j)}{\mathrm{COP}_\mathrm{fe}(t_j)}
 $$ (eq-h-pfe)
 
 :::{container} where
@@ -1360,7 +1360,7 @@ $P_\mathrm{h,fe}(t_j)$
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
-$C_\mathrm{OP,fe}(t_j)$
+$\mathrm{COP}_\mathrm{fe}(t_j)$
 : 外気温度 $t_j$ において、無着霜時に定格運転能力と最大運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
 $t_j$
@@ -1370,7 +1370,7 @@ $t_j$
 :::
 
 $$
-P_\mathrm{h,fe,f}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,fe,f}(t_j)}
+P_\mathrm{h,fe,f}(t_j) = \frac{L_\mathrm{h}(t_j)}{\mathrm{COP}_\mathrm{fe,f}(t_j)}
 $$ (eq-h-pfe-f)
 
 :::{container} where
@@ -1382,7 +1382,7 @@ $P_\mathrm{h,fe,f}(t_j)$
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
-$C_\mathrm{OP,fe,f}(t_j)$
+$\mathrm{COP}_\mathrm{fe,f}(t_j)$
 : 外気温度 $t_j$ において、着霜時に定格運転能力と最大運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
 $t_j$
@@ -1391,22 +1391,22 @@ $t_j$
 である。
 :::
 
-無着霜時のエネルギー消費効率 $C_\mathrm{OP,fe}(t_j)$ は、交点温度 $t_\mathrm{h}$ での最大運転のエネルギー消費効率と、交点温度 $t_\mathrm{a}$ での定格運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.50)、{ref}`r-h-cop`)。
+無着霜時のエネルギー消費効率 $\mathrm{COP}_\mathrm{fe}(t_j)$ は、交点温度 $t_\mathrm{h}$ での最大運転のエネルギー消費効率と、交点温度 $t_\mathrm{a}$ での定格運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.50)、{ref}`r-h-cop`)。
 
 $$
-C_\mathrm{OP,fe}(t_j) = C_\mathrm{OP,ext}(t_\mathrm{h}) + \frac{C_\mathrm{OP,ful}(t_\mathrm{a}) - C_\mathrm{OP,ext}(t_\mathrm{h})}{t_\mathrm{a} - t_\mathrm{h}}\,(t_j - t_\mathrm{h})
+\mathrm{COP}_\mathrm{fe}(t_j) = \mathrm{COP}_\mathrm{ext}(t_\mathrm{h}) + \frac{\mathrm{COP}_\mathrm{ful}(t_\mathrm{a}) - \mathrm{COP}_\mathrm{ext}(t_\mathrm{h})}{t_\mathrm{a} - t_\mathrm{h}}\,(t_j - t_\mathrm{h})
 $$ (eq-h-cop-fe)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,fe}(t_j)$
+$\mathrm{COP}_\mathrm{fe}(t_j)$
 : 外気温度 $t_j$ において、無着霜時に定格運転能力と最大運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
-$C_\mathrm{OP,ext}(t_\mathrm{h})$
+$\mathrm{COP}_\mathrm{ext}(t_\mathrm{h})$
 : 外気温度 $t_\mathrm{h}$ における無着霜時の最大運転のエネルギー消費効率 (−)
 
-$C_\mathrm{OP,ful}(t_\mathrm{a})$
+$\mathrm{COP}_\mathrm{ful}(t_\mathrm{a})$
 : 外気温度 $t_\mathrm{a}$ における無着霜時の定格運転のエネルギー消費効率 (−)
 
 $t_\mathrm{h}$
@@ -1421,22 +1421,22 @@ $t_j$
 である。
 :::
 
-着霜時のエネルギー消費効率 $C_\mathrm{OP,fe,f}(t_j)$ は、交点温度 $t_\mathrm{f}$ での着霜時の最大運転のエネルギー消費効率と、交点温度 $t_\mathrm{g}$ での着霜時の定格運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.52))。
+着霜時のエネルギー消費効率 $\mathrm{COP}_\mathrm{fe,f}(t_j)$ は、交点温度 $t_\mathrm{f}$ での着霜時の最大運転のエネルギー消費効率と、交点温度 $t_\mathrm{g}$ での着霜時の定格運転のエネルギー消費効率の間を、外気温度で直線補間して求める (附属書 B の式 (B.52))。
 
 $$
-C_\mathrm{OP,fe,f}(t_j) = C_\mathrm{OP,ext,f}(t_\mathrm{f}) + \frac{C_\mathrm{OP,ful,f}(t_\mathrm{g}) - C_\mathrm{OP,ext,f}(t_\mathrm{f})}{t_\mathrm{g} - t_\mathrm{f}}\,(t_j - t_\mathrm{f})
+\mathrm{COP}_\mathrm{fe,f}(t_j) = \mathrm{COP}_\mathrm{ext,f}(t_\mathrm{f}) + \frac{\mathrm{COP}_\mathrm{ful,f}(t_\mathrm{g}) - \mathrm{COP}_\mathrm{ext,f}(t_\mathrm{f})}{t_\mathrm{g} - t_\mathrm{f}}\,(t_j - t_\mathrm{f})
 $$ (eq-h-cop-fe-f)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,fe,f}(t_j)$
+$\mathrm{COP}_\mathrm{fe,f}(t_j)$
 : 外気温度 $t_j$ において、着霜時に定格運転能力と最大運転能力の間で可変運転したときのエネルギー消費効率 (−)
 
-$C_\mathrm{OP,ext,f}(t_\mathrm{f})$
+$\mathrm{COP}_\mathrm{ext,f}(t_\mathrm{f})$
 : 外気温度 $t_\mathrm{f}$ における着霜時の最大運転のエネルギー消費効率 (−)
 
-$C_\mathrm{OP,ful,f}(t_\mathrm{g})$
+$\mathrm{COP}_\mathrm{ful,f}(t_\mathrm{g})$
 : 外気温度 $t_\mathrm{g}$ における着霜時の定格運転のエネルギー消費効率 (−)
 
 $t_\mathrm{f}$
@@ -1506,13 +1506,13 @@ $t_j$
 交点温度でのエネルギー消費効率は、その温度での能力を消費電力で割って求める (附属書 B の式 (B.47))。
 
 $$
-C_\mathrm{OP,ful}(t_\mathrm{a}) = \frac{\Phi_\mathrm{h,ful}(t_\mathrm{a})}{P_\mathrm{h,ful}(t_\mathrm{a})}
+\mathrm{COP}_\mathrm{ful}(t_\mathrm{a}) = \frac{\Phi_\mathrm{h,ful}(t_\mathrm{a})}{P_\mathrm{h,ful}(t_\mathrm{a})}
 $$ (eq-h-cop-ful)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,ful}(t_\mathrm{a})$
+$\mathrm{COP}_\mathrm{ful}(t_\mathrm{a})$
 : 外気温度 $t_\mathrm{a}$ における無着霜時の定格運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{h,ful}(t_\mathrm{a})$
@@ -1528,13 +1528,13 @@ $t_\mathrm{a}$
 :::
 
 $$
-C_\mathrm{OP,haf}(t_\mathrm{d}) = \frac{\Phi_\mathrm{h,haf}(t_\mathrm{d})}{P_\mathrm{h,haf}(t_\mathrm{d})}
+\mathrm{COP}_\mathrm{haf}(t_\mathrm{d}) = \frac{\Phi_\mathrm{h,haf}(t_\mathrm{d})}{P_\mathrm{h,haf}(t_\mathrm{d})}
 $$ (eq-h-cop-haf)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,haf}(t_\mathrm{d})$
+$\mathrm{COP}_\mathrm{haf}(t_\mathrm{d})$
 : 外気温度 $t_\mathrm{d}$ における無着霜時の中間運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{h,haf}(t_\mathrm{d})$
@@ -1550,13 +1550,13 @@ $t_\mathrm{d}$
 :::
 
 $$
-C_\mathrm{OP,ext}(t_\mathrm{h}) = \frac{\Phi_\mathrm{h,ext}(t_\mathrm{h})}{P_\mathrm{h,ext}(t_\mathrm{h})}
+\mathrm{COP}_\mathrm{ext}(t_\mathrm{h}) = \frac{\Phi_\mathrm{h,ext}(t_\mathrm{h})}{P_\mathrm{h,ext}(t_\mathrm{h})}
 $$ (eq-h-cop-ext)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,ext}(t_\mathrm{h})$
+$\mathrm{COP}_\mathrm{ext}(t_\mathrm{h})$
 : 外気温度 $t_\mathrm{h}$ における無着霜時の最大運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{h,ext}(t_\mathrm{h})$
@@ -1572,13 +1572,13 @@ $t_\mathrm{h}$
 :::
 
 $$
-C_\mathrm{OP,ful,f}(t_\mathrm{g}) = \frac{\Phi_\mathrm{h,ful,f}(t_\mathrm{g})}{P_\mathrm{h,ful,f}(t_\mathrm{g})}
+\mathrm{COP}_\mathrm{ful,f}(t_\mathrm{g}) = \frac{\Phi_\mathrm{h,ful,f}(t_\mathrm{g})}{P_\mathrm{h,ful,f}(t_\mathrm{g})}
 $$ (eq-h-cop-ful-f)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,ful,f}(t_\mathrm{g})$
+$\mathrm{COP}_\mathrm{ful,f}(t_\mathrm{g})$
 : 外気温度 $t_\mathrm{g}$ における着霜時の定格運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{h,ful,f}(t_\mathrm{g})$
@@ -1594,13 +1594,13 @@ $t_\mathrm{g}$
 :::
 
 $$
-C_\mathrm{OP,haf,f}(t_\mathrm{e}) = \frac{\Phi_\mathrm{h,haf,f}(t_\mathrm{e})}{P_\mathrm{h,haf,f}(t_\mathrm{e})}
+\mathrm{COP}_\mathrm{haf,f}(t_\mathrm{e}) = \frac{\Phi_\mathrm{h,haf,f}(t_\mathrm{e})}{P_\mathrm{h,haf,f}(t_\mathrm{e})}
 $$ (eq-h-cop-haf-f)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,haf,f}(t_\mathrm{e})$
+$\mathrm{COP}_\mathrm{haf,f}(t_\mathrm{e})$
 : 外気温度 $t_\mathrm{e}$ における着霜時の中間運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{h,haf,f}(t_\mathrm{e})$
@@ -1616,13 +1616,13 @@ $t_\mathrm{e}$
 :::
 
 $$
-C_\mathrm{OP,ext,f}(t_\mathrm{f}) = \frac{\Phi_\mathrm{h,ext,f}(t_\mathrm{f})}{P_\mathrm{h,ext,f}(t_\mathrm{f})}
+\mathrm{COP}_\mathrm{ext,f}(t_\mathrm{f}) = \frac{\Phi_\mathrm{h,ext,f}(t_\mathrm{f})}{P_\mathrm{h,ext,f}(t_\mathrm{f})}
 $$ (eq-h-cop-ext-f)
 
 :::{container} where
 ここに、
 
-$C_\mathrm{OP,ext,f}(t_\mathrm{f})$
+$\mathrm{COP}_\mathrm{ext,f}(t_\mathrm{f})$
 : 外気温度 $t_\mathrm{f}$ における着霜時の最大運転のエネルギー消費効率 (−)
 
 $\Phi_\mathrm{h,ext,f}(t_\mathrm{f})$
