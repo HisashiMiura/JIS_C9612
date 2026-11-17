@@ -1033,25 +1033,25 @@ $P_\mathrm{h}(t_j)$
 : 温度区分 $j$ における消費電力。補助電熱装置の消費電力を含む (W)
 
 $X_\mathrm{h}(t_j)$
-: 外気温度 $t_j$ における運転率 (−)
+: 外気温度 $t_j$ における無着霜時の運転率 (−)
 
 $P_\mathrm{h,haf}(t_j)$
 : 外気温度 $t_j$ における無着霜時の中間運転消費電力 (W)
 
 $F_\mathrm{h,PL}(t_j)$
-: 外気温度 $t_j$ における部分負荷率 (−)
+: 外気温度 $t_j$ における無着霜時の部分負荷率 (−)
 
 $P_\mathrm{h,hf}(t_j)$
-: 外気温度 $t_j$ において、中間運転能力と定格運転能力の間で可変運転したときの消費電力 (W)
+: 外気温度 $t_j$ において、無着霜時に中間運転能力と定格運転能力の間で可変運転したときの消費電力 (W)
 
 $P_\mathrm{h,fe}(t_j)$
-: 外気温度 $t_j$ において、定格運転能力と最大運転能力の間で可変運転したときの消費電力 (W)
+: 外気温度 $t_j$ において、無着霜時に定格運転能力と最大運転能力の間で可変運転したときの消費電力 (W)
 
 $P_\mathrm{h,ext}(t_j)$
 : 外気温度 $t_j$ における無着霜時の最大運転消費電力 (W)
 
 $P_\mathrm{h,RH}(t_j)$
-: 外気温度 $t_j$ における補助電熱装置の消費電力 (W)
+: 外気温度 $t_j$ における無着霜時の補助電熱装置の消費電力 (W)
 
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
@@ -1076,10 +1076,10 @@ $t_j$
 $$
 P_\mathrm{h}(t_j) =
 \begin{cases}
-\dfrac{X_\mathrm{h}(t_j)\,P_\mathrm{h,haf,f}(t_j)}{F_\mathrm{h,PL}(t_j)} & \text{(断続運転)} \\[2ex]
-P_\mathrm{h,hf}(t_j) & \text{(中間〜定格の可変運転)} \\[1ex]
-P_\mathrm{h,fe}(t_j) & \text{(定格〜最大の可変運転)} \\[1ex]
-P_\mathrm{h,ext,f}(t_j) + P_\mathrm{h,RH}(t_j) & \text{(最大運転)}
+\dfrac{X_\mathrm{h,f}(t_j)\,P_\mathrm{h,haf,f}(t_j)}{F_\mathrm{h,PL,f}(t_j)} & \text{(断続運転)} \\[2ex]
+P_\mathrm{h,hf,f}(t_j) & \text{(中間〜定格の可変運転)} \\[1ex]
+P_\mathrm{h,fe,f}(t_j) & \text{(定格〜最大の可変運転)} \\[1ex]
+P_\mathrm{h,ext,f}(t_j) + P_\mathrm{h,RH,f}(t_j) & \text{(最大運転)}
 \end{cases}
 $$ (eq-h-p-f)
 
@@ -1089,26 +1089,26 @@ $$ (eq-h-p-f)
 $P_\mathrm{h}(t_j)$
 : 温度区分 $j$ における消費電力。補助電熱装置の消費電力を含む (W)
 
-$X_\mathrm{h}(t_j)$
-: 外気温度 $t_j$ における運転率 (−)
+$X_\mathrm{h,f}(t_j)$
+: 外気温度 $t_j$ における着霜時の運転率 (−)
 
 $P_\mathrm{h,haf,f}(t_j)$
 : 外気温度 $t_j$ における着霜時の中間運転消費電力 (W)
 
-$F_\mathrm{h,PL}(t_j)$
-: 外気温度 $t_j$ における部分負荷率 (−)
+$F_\mathrm{h,PL,f}(t_j)$
+: 外気温度 $t_j$ における着霜時の部分負荷率 (−)
 
-$P_\mathrm{h,hf}(t_j)$
-: 外気温度 $t_j$ において、中間運転能力と定格運転能力の間で可変運転したときの消費電力 (W)
+$P_\mathrm{h,hf,f}(t_j)$
+: 外気温度 $t_j$ において、着霜時に中間運転能力と定格運転能力の間で可変運転したときの消費電力 (W)
 
-$P_\mathrm{h,fe}(t_j)$
-: 外気温度 $t_j$ において、定格運転能力と最大運転能力の間で可変運転したときの消費電力 (W)
+$P_\mathrm{h,fe,f}(t_j)$
+: 外気温度 $t_j$ において、着霜時に定格運転能力と最大運転能力の間で可変運転したときの消費電力 (W)
 
 $P_\mathrm{h,ext,f}(t_j)$
 : 外気温度 $t_j$ における着霜時の最大運転消費電力 (W)
 
-$P_\mathrm{h,RH}(t_j)$
-: 外気温度 $t_j$ における補助電熱装置の消費電力 (W)
+$P_\mathrm{h,RH,f}(t_j)$
+: 外気温度 $t_j$ における着霜時の補助電熱装置の消費電力 (W)
 
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
@@ -1143,7 +1143,7 @@ $t_j$
 
 想定暖房空調負荷が中間運転能力以下のときは、中間運転能力で運転と停止を繰り返して負荷に合わせる。消費電力の考え方は冷房と同じである (冷房期間の「断続運転」)。
 
-部分負荷率 $F_\mathrm{h,PL}(t_j)$ は、効率低下係数 $C_\mathrm{h,D}$ を用いて次式で求める (附属書 B の式 (B.36))。効率低下係数は、試験を行わず 0.25 とする (附属書 B の表 B.4、B.2.5.3.4)。
+無着霜時の部分負荷率 $F_\mathrm{h,PL}(t_j)$ と着霜時の部分負荷率 $F_\mathrm{h,PL,f}(t_j)$ は、効率低下係数 $C_\mathrm{h,D}$ を用いて次式で求める (附属書 B の式 (B.36))。効率低下係数は、試験を行わず 0.25 とする (附属書 B の表 B.4、B.2.5.3.4)。
 
 $$
 F_\mathrm{h,PL}(t_j) = 1 - C_\mathrm{h,D}\,[1 - X_\mathrm{h}(t_j)]
@@ -1153,13 +1153,13 @@ $$ (eq-h-plf)
 ここに、
 
 $F_\mathrm{h,PL}(t_j)$
-: 外気温度 $t_j$ における部分負荷率 (−)
+: 外気温度 $t_j$ における無着霜時の部分負荷率 (−)
 
 $C_\mathrm{h,D}$
 : 効率低下係数。0.25 とする (−)
 
 $X_\mathrm{h}(t_j)$
-: 外気温度 $t_j$ における運転率 (−)
+: 外気温度 $t_j$ における無着霜時の運転率 (−)
 
 $t_j$
 : 温度区分 $j$ の外気温度 (℃)
@@ -1167,27 +1167,64 @@ $t_j$
 である。
 :::
 
-運転率 $X_\mathrm{h}(t_j)$ は、想定暖房空調負荷と中間運転能力の比であり、次式による (附属書 B の式 (B.35))。
+$$
+F_\mathrm{h,PL,f}(t_j) = 1 - C_\mathrm{h,D}\,[1 - X_\mathrm{h,f}(t_j)]
+$$ (eq-h-plf-f)
+
+:::{container} where
+ここに、
+
+$F_\mathrm{h,PL,f}(t_j)$
+: 外気温度 $t_j$ における着霜時の部分負荷率 (−)
+
+$C_\mathrm{h,D}$
+: 効率低下係数。0.25 とする (−)
+
+$X_\mathrm{h,f}(t_j)$
+: 外気温度 $t_j$ における着霜時の運転率 (−)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
+無着霜時の運転率 $X_\mathrm{h}(t_j)$ と着霜時の運転率 $X_\mathrm{h,f}(t_j)$ は、想定暖房空調負荷と中間運転能力の比であり、次式による (附属書 B の式 (B.35))。
 
 $$
-X_\mathrm{h}(t_j) =
-\begin{cases}
-\dfrac{L_\mathrm{h}(t_j)}{\Phi_\mathrm{h,haf}(t_j)} & \text{(無着霜領域)} \\[2ex]
-\dfrac{L_\mathrm{h}(t_j)}{\Phi_\mathrm{h,haf,f}(t_j)} & \text{(着霜領域)}
-\end{cases}
+X_\mathrm{h}(t_j) = \frac{L_\mathrm{h}(t_j)}{\Phi_\mathrm{h,haf}(t_j)}
 $$ (eq-h-x)
 
 :::{container} where
 ここに、
 
 $X_\mathrm{h}(t_j)$
-: 外気温度 $t_j$ における運転率 (−)
+: 外気温度 $t_j$ における無着霜時の運転率 (−)
 
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $\Phi_\mathrm{h,haf}(t_j)$
 : 外気温度 $t_j$ における無着霜時の中間運転能力 (W)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
+$$
+X_\mathrm{h,f}(t_j) = \frac{L_\mathrm{h}(t_j)}{\Phi_\mathrm{h,haf,f}(t_j)}
+$$ (eq-h-x-f)
+
+:::{container} where
+ここに、
+
+$X_\mathrm{h,f}(t_j)$
+: 外気温度 $t_j$ における着霜時の運転率 (−)
+
+$L_\mathrm{h}(t_j)$
+: 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $\Phi_\mathrm{h,haf,f}(t_j)$
 : 外気温度 $t_j$ における着霜時の中間運転能力 (W)
@@ -1200,27 +1237,42 @@ $t_j$
 
 #### 中間運転能力と定格運転能力の間の可変運転
 
-想定暖房空調負荷が中間運転能力を超え、定格運転能力以下のときは、能力を連続的に変えて、負荷とつり合う能力で運転する。消費電力 $P_\mathrm{h,hf}(t_j)$ は、想定暖房空調負荷をエネルギー消費効率 (COP)で割って求める (附属書 B の式 (B.48))。
+想定暖房空調負荷が中間運転能力を超え、定格運転能力以下のときは、能力を連続的に変えて、負荷とつり合う能力で運転する。無着霜時の消費電力 $P_\mathrm{h,hf}(t_j)$ と着霜時の消費電力 $P_\mathrm{h,hf,f}(t_j)$ は、想定暖房空調負荷をエネルギー消費効率 (COP)で割って求める (附属書 B の式 (B.48))。
 
 $$
-P_\mathrm{h,hf}(t_j) =
-\begin{cases}
-\dfrac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,hf}(t_j)} & \text{(無着霜領域)} \\[2ex]
-\dfrac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,hf,f}(t_j)} & \text{(着霜領域)}
-\end{cases}
+P_\mathrm{h,hf}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,hf}(t_j)}
 $$ (eq-h-phf)
 
 :::{container} where
 ここに、
 
 $P_\mathrm{h,hf}(t_j)$
-: 外気温度 $t_j$ において、中間運転能力と定格運転能力の間で可変運転したときの消費電力 (W)
+: 外気温度 $t_j$ において、無着霜時に中間運転能力と定格運転能力の間で可変運転したときの消費電力 (W)
 
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $C_\mathrm{OP,hf}(t_j)$
 : 外気温度 $t_j$ において、無着霜時に中間運転能力と定格運転能力の間で可変運転したときのエネルギー消費効率 (−)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
+$$
+P_\mathrm{h,hf,f}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,hf,f}(t_j)}
+$$ (eq-h-phf-f)
+
+:::{container} where
+ここに、
+
+$P_\mathrm{h,hf,f}(t_j)$
+: 外気温度 $t_j$ において、着霜時に中間運転能力と定格運転能力の間で可変運転したときの消費電力 (W)
+
+$L_\mathrm{h}(t_j)$
+: 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $C_\mathrm{OP,hf,f}(t_j)$
 : 外気温度 $t_j$ において、着霜時に中間運転能力と定格運転能力の間で可変運転したときのエネルギー消費効率 (−)
@@ -1293,27 +1345,42 @@ $t_j$
 
 #### 定格運転能力と最大運転能力の間の可変運転
 
-想定暖房空調負荷が定格運転能力を超え、最大運転能力以下のときは、定格運転能力より高い能力で、負荷とつり合うように運転する。消費電力 $P_\mathrm{h,fe}(t_j)$ は、想定暖房空調負荷をエネルギー消費効率で割って求める (附属書 B の式 (B.48))。
+想定暖房空調負荷が定格運転能力を超え、最大運転能力以下のときは、定格運転能力より高い能力で、負荷とつり合うように運転する。無着霜時の消費電力 $P_\mathrm{h,fe}(t_j)$ と着霜時の消費電力 $P_\mathrm{h,fe,f}(t_j)$ は、想定暖房空調負荷をエネルギー消費効率で割って求める (附属書 B の式 (B.48))。
 
 $$
-P_\mathrm{h,fe}(t_j) =
-\begin{cases}
-\dfrac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,fe}(t_j)} & \text{(無着霜領域)} \\[2ex]
-\dfrac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,fe,f}(t_j)} & \text{(着霜領域)}
-\end{cases}
+P_\mathrm{h,fe}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,fe}(t_j)}
 $$ (eq-h-pfe)
 
 :::{container} where
 ここに、
 
 $P_\mathrm{h,fe}(t_j)$
-: 外気温度 $t_j$ において、定格運転能力と最大運転能力の間で可変運転したときの消費電力 (W)
+: 外気温度 $t_j$ において、無着霜時に定格運転能力と最大運転能力の間で可変運転したときの消費電力 (W)
 
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $C_\mathrm{OP,fe}(t_j)$
 : 外気温度 $t_j$ において、無着霜時に定格運転能力と最大運転能力の間で可変運転したときのエネルギー消費効率 (−)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
+$$
+P_\mathrm{h,fe,f}(t_j) = \frac{L_\mathrm{h}(t_j)}{C_\mathrm{OP,fe,f}(t_j)}
+$$ (eq-h-pfe-f)
+
+:::{container} where
+ここに、
+
+$P_\mathrm{h,fe,f}(t_j)$
+: 外気温度 $t_j$ において、着霜時に定格運転能力と最大運転能力の間で可変運転したときの消費電力 (W)
+
+$L_\mathrm{h}(t_j)$
+: 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $C_\mathrm{OP,fe,f}(t_j)$
 : 外気温度 $t_j$ において、着霜時に定格運転能力と最大運転能力の間で可変運転したときのエネルギー消費効率 (−)
@@ -1388,27 +1455,42 @@ $t_j$
 
 想定暖房空調負荷が最大運転能力を超えるときは、最大運転能力で連続運転し、足りない熱量を補助電熱装置で補う。最大運転の消費電力は、無着霜領域では $P_\mathrm{h,ext}(t_j)$、着霜領域では $P_\mathrm{h,ext,f}(t_j)$ とする ({eq}`eq-h-p`、{eq}`eq-h-p-f`、{ref}`r-h-pext`)。
 
-補助電熱装置の消費電力 $P_\mathrm{h,RH}(t_j)$ は、不足する熱量に等しいとし、次式による (附属書 B の式 (B.37))。
+無着霜時の補助電熱装置の消費電力 $P_\mathrm{h,RH}(t_j)$ と着霜時の補助電熱装置の消費電力 $P_\mathrm{h,RH,f}(t_j)$ は、不足する熱量に等しいとし、次式による (附属書 B の式 (B.37))。
 
 $$
-P_\mathrm{h,RH}(t_j) =
-\begin{cases}
-L_\mathrm{h}(t_j) - \Phi_\mathrm{h,ext}(t_j) & \text{(無着霜領域)} \\[1ex]
-L_\mathrm{h}(t_j) - \Phi_\mathrm{h,ext,f}(t_j) & \text{(着霜領域)}
-\end{cases}
+P_\mathrm{h,RH}(t_j) = L_\mathrm{h}(t_j) - \Phi_\mathrm{h,ext}(t_j)
 $$ (eq-h-prh)
 
 :::{container} where
 ここに、
 
 $P_\mathrm{h,RH}(t_j)$
-: 外気温度 $t_j$ における補助電熱装置の消費電力 (W)
+: 外気温度 $t_j$ における無着霜時の補助電熱装置の消費電力 (W)
 
 $L_\mathrm{h}(t_j)$
 : 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $\Phi_\mathrm{h,ext}(t_j)$
 : 外気温度 $t_j$ における無着霜時の最大運転能力 (W)
+
+$t_j$
+: 温度区分 $j$ の外気温度 (℃)
+
+である。
+:::
+
+$$
+P_\mathrm{h,RH,f}(t_j) = L_\mathrm{h}(t_j) - \Phi_\mathrm{h,ext,f}(t_j)
+$$ (eq-h-prh-f)
+
+:::{container} where
+ここに、
+
+$P_\mathrm{h,RH,f}(t_j)$
+: 外気温度 $t_j$ における着霜時の補助電熱装置の消費電力 (W)
+
+$L_\mathrm{h}(t_j)$
+: 外気温度 $t_j$ における想定暖房空調負荷 (W)
 
 $\Phi_\mathrm{h,ext,f}(t_j)$
 : 外気温度 $t_j$ における着霜時の最大運転能力 (W)

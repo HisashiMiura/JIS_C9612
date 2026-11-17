@@ -347,7 +347,7 @@ def heating_power() -> None:
     ax.plot(tj, [v[0] for v in vals], color=INK, lw=2, zorder=3, marker="o", ms=5, mfc="white", mec=INK, mew=1.2,
             label="消費電力 $P_\\mathrm{h}(t_j)$ (補助電熱装置を含む)")
     ax.bar(tj, [v[1] for v in vals], width=0.6, color=C_LOAD, alpha=0.35, zorder=2,
-           label="うち補助電熱装置 $P_\\mathrm{h,RH}(t_j)$")
+           label="うち補助電熱装置 $P_\\mathrm{h,RH}(t_j)$、$P_\\mathrm{h,RH,f}(t_j)$")
     ax.text(-0.75, 50, "着霜領域", ha="center", va="bottom", color=INK_2, fontsize=9)
 
     ax.set_xlim(-8, 17)
