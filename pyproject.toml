@@ -9,6 +9,9 @@ description = "JIS C 9612:2013 附属書 B による回転数制御形ルーム�
 requires-python = ">=3.12"
 dependencies = []
 
+[project.scripts]
+jis-c9612 = "jis_c9612.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
