@@ -64,30 +64,30 @@ JIS C 9612:2013 附属書 B による APF 計算プログラムの設計です�
 
 APF = (CSTL + HSTL) / (CSEC + HSEC)
 
-## 3. モジュール構成(案)
+## 3. モジュール構成
 
-src レイアウトの Python パッケージとする。
+src レイアウトの Python パッケージ (`pyproject.toml`)。標準ライブラリだけで動く。
 
 ```
 src/jis_c9612/
-  __init__.py
-  coefficients.py    表 B.1 / 表 B.4 の係数、負荷線の温度(t0, t100)、CD
-  climate.py         外気温度の温度区分と発生時間。表 B.3 / 表 B.6 を内蔵し、差し替えにも対応
-  inputs.py          入力データの定義(dataclass)と入力チェック
-  characteristics.py 試験値の補完(係数の適用)、特性直線、直線どうしの交点
-  load.py            想定冷房・暖房空調負荷線
-  cooling.py         CSTL, CSEC, CSPF
-  heating.py         HSTL, HSEC, HSPF(着霜・無着霜)
-  apf.py             APF の算出と、結果(温度区分ごとの内訳を含む)の組み立て
-  cli.py             コマンドライン: 入力ファイル → 結果ファイル
-tests/
-  test_characteristics.py, test_cooling.py, test_heating.py, test_apf.py
-examples/
-  入力ファイルの例
+  __init__.py      公開する関数・クラス (compute_apf, compute_cooling, compute_heating, CoolingInput, HeatingInput)
+  coefficients.py  表 B.1 / 表 B.4 の係数、負荷線の温度、効率低下係数、着霜領域の範囲
+  climate.py       東京の外気温度発生時間 (表 B.3 / 表 B.6)。{外気温度: 発生時間} の辞書
+  inputs.py        入力値 (CoolingInput, HeatingInput) と入力チェック
+  lines.py         2 点を通る直線 (能力・消費電力の特性線)
+  cooling.py       冷房期間: 特性線、想定冷房空調負荷、交点温度、温度区分ごとの計算、CSTL・CSEC・CSPF
+  heating.py       暖房期間: 無着霜時・着霜時の特性線、交点温度と COP、温度区分ごとの計算、HSTL・HSEC・HSPF
+  apf.py           APF と期間消費電力量
+tests/             pytest (冷房・暖房・APF)
+examples/          計算例 (example_tokyo.py)
 ```
+
+コメントには、ドキュメント 3 章の式のラベル ([eq-c-...]、[eq-h-...]) と附属書 B の式番号を付けている。
+入力ファイルの読み込みとコマンドライン (cli.py) は、未決事項 Q1・Q2 が決まってから作る。
 
 ### 設計方針
 
+- **負荷 0 %の外気温度を超える温度区分** (冷房で 23 ℃以下、暖房で 17 ℃以上)は、負荷も消費電力も 0 とする。東京の表 B.3・表 B.6 にはなく、特定地域の温度分布を与えたときだけ生じる。
 - **交点温度は附属書 B の式 (B.20)、(B.22) の形で求める**(3 章「交点温度」、4 章「交点温度の求め方」)。29 ℃の値は先に係数で求めておき、係数を代入済みの式 (B.25)、(B.26) は使わない。
 - **温度区分ごとの内訳を出力する。** 各 tj の運転領域、負荷、能力、消費電力、X、PLF、補助電熱を表で出す。手計算や他のツールとの照合に使う。
 - **試験値の補完過程を記録する。** 実測値と、係数で求めた値を区別して出力する。
