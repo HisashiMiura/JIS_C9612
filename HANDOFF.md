@@ -52,6 +52,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 | `docs/05_symbols.md` | 5. 記号の対応 (本書の記号と JIS 附属書 B の記号の対応表) |
 | `docs/figures/` | ドキュメントの図(SVG)と、それを作るスクリプト `make_figures.py` |
 | `docs/_ext/` | 自作の Sphinx 拡張(図・表の番号から章番号を取り除く `chapter_numbering.py`) |
+| `README.md` | リポジトリの説明 (概要、インストール、使い方、ドキュメント、注意事項) |
 | `environment.yml` | conda 環境定義 |
 | `DESIGN.md` | 計算プログラムの設計メモ(計算の流れ、モジュール構成、規格の解釈、未決事項) |
 
@@ -108,6 +109,10 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 ## 作業ログ
 
 新しいものを上に追記する。
+
+### 2026-11-18
+
+- `README.md` を作成
 
 ### 2026-11-17
 
