@@ -29,6 +29,7 @@ plt.rcParams.update(
         "font.family": ["Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", "sans-serif"],
         "font.size": 10,
         "svg.fonttype": "none",  # 文字は SVG のテキストとして出力し、ブラウザのフォントで表示する
+        "svg.hashsalt": "jis-c9612",  # 内部 ID を固定し、作り直しても差分が出ないようにする
         "axes.edgecolor": INK_2,
         "axes.labelcolor": INK,
         "xtick.color": INK_2,
@@ -111,7 +112,7 @@ def cooling_regions() -> None:
         t.set_color(INK)
 
     fig.tight_layout()
-    fig.savefig(OUT_DIR / "cooling_regions.svg")
+    fig.savefig(OUT_DIR / "cooling_regions.svg", metadata={"Date": None})
     plt.close(fig)
     print(f"tc = {tc:.2f} ℃, tb = {tb:.2f} ℃")
 
@@ -192,7 +193,7 @@ def cooling_power() -> None:
     for t in leg.get_texts():
         t.set_color(INK)
     fig.tight_layout()
-    fig.savefig(OUT_DIR / "cooling_power.svg")
+    fig.savefig(OUT_DIR / "cooling_power.svg", metadata={"Date": None})
     plt.close(fig)
     for t in tj:
         v, st = power(t)
