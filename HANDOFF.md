@@ -114,6 +114,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 
 ### 2026-11-18
 
+- GitHub Actions の actions/checkout と actions/setup-python を v7 に更新 (Node.js 20 廃止の警告への対応。v7 は Node.js 24 で動く)
 - VS Code のテストエクスプローラーで pytest を実行する設定 (`.vscode/`) を追加
 - GitHub Actions でテストを実行するワークフローを追加し、README にテストのバッジを付けた
 - `README.md` を作成
