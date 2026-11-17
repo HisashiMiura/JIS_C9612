@@ -43,6 +43,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 |---|---|
 | `src/jis_c9612/` | 計算プログラム (構成は DESIGN.md の 3 章) |
 | `tests/` | テスト (pytest) |
+| `notes/` | 試算と分析の Jupyter Notebook (`case_studies.ipynb`)。実行方法は `notes/README.md` |
 | `examples/` | 入力ファイルの例 (`example_tokyo.toml`) と Python から使う例 (`example_tokyo.py`) |
 | `docs/` | Sphinx ドキュメント |
 | `docs/01_introduction.md` | 1. はじめに(目的、対象範囲、用語・記号) |
@@ -51,6 +52,8 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 | `docs/04_rationale.md` | 4. 評価方法の根拠(JIS の該当条項、独自の解釈とその理由) |
 | `docs/05_symbols.md` | 5. 記号の対応 (本書の記号と JIS 附属書 B の記号の対応表) |
 | `docs/figures/` | ドキュメントの図(SVG)と、それを作るスクリプト `make_figures.py` |
+| `docs/06_case_studies.md` | 6. 試算例 (例の機種の APF の内訳・感度・規模・気候・最大モードの有無の分析) |
+| `docs/case_studies/` | 6 章の図 (SVG) と表 (CSV)。`notes/case_studies.ipynb` が出力する |
 | `docs/_ext/` | 自作の Sphinx 拡張(図・表の番号から章番号を取り除く `chapter_numbering.py`) |
 | `README.md` | リポジトリの説明 (概要、インストール、使い方、ドキュメント、注意事項) |
 | `.readthedocs.yaml` | Read the Docs のビルド設定 (Python 3.12、`docs/requirements.txt`、警告があれば失敗)。公開先 https://jis-c9612.readthedocs.io/ (言語と最新版のページに転送される) |
@@ -78,6 +81,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 - 用語の定義は JIS・ISO の用語の節のように、用語名の行の下に定義を書き、定義は「。」で結ぶ。番号は付けない。`:::{container} terms` で囲む (例は 1 章「用語」)。
 - 別行立ての数式には 1 つの式だけを書く(1 行に 2 式を並べない)。$x$ のような代表の添字でまとめず、ful(定格)、haf(中間)などに書き分ける。式の数が増えてもよい。
 - 別行立ての式には、1 式ごとに直後へ記号説明を付ける。記号説明は `:::{container} where` で囲み、「ここに、」で始めて「である。」で結ぶ。間に、左辺を含む式中の記号を定義リスト(`$記号$` の次の行に `: 内容 (単位)`)で並べる。単位は説明のあとに丸かっこで囲んで書く(無次元は `(−)`)。表の見出しの単位も `$t_j$ (℃)` のように丸かっこで書く。表示は `docs/_static/custom.css` により 1 文字字下げされ、「:」が縦にそろう。書き方の例は 3 章の式(1)を参照。入力値など、式に付かない記号の一覧は表にせず、同じ形の定義リストを `:::{container} symbols` で囲んで書く(「ここに、」「である。」は付けない。例は 3 章「入力値」)。
+- 6 章の図と表は `notes/case_studies.ipynb` が `docs/case_studies/` に出力し、6 章は表を `csv-table` で読み込む。Notebook を再実行したら 6 章本文の数値も確認する。
 - 図は `docs/figures/make_figures.py`(matplotlib)で SVG を作り、SVG もリポジトリに含める(ドキュメントのビルドに matplotlib は不要)。図を直したらスクリプトを直して `conda run -n JIS_C9612 python docs/figures/make_figures.py` で作り直す。数値は説明用の例とし、図の説明文にその旨を書く。JIS の図は写さない。
 - 4 章の各項目には `(r-…)=` のラベルを付け、3 章から `{ref}` で参照する。
 - **計算は規格どおりの手順に限る。** 附属書 B で「試験を行わず係数を用いる」とされた値(冷房の 29 ℃の値、暖房の −7 ℃・2 ℃の値の一部など)は、常に係数で求め、実測値は入力として受け付けない(2026-11-17 決定。4 章「回転数制御形の外気 29 ℃の値」)。
@@ -94,7 +98,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 - ディレクトリ構成、`.gitignore`、Sphinx の骨組み、conda 環境定義まで完了。
 - 「3. 評価方法」: 概要、冷房期間、暖房期間を執筆済み(暖房は確認待ち)。図 6 枚(`docs/figures/`)。
 - 「4. 評価方法の根拠」: 冷房期間、暖房期間、共通事項を執筆済み。暖房の「最大モードをもたない機種」は規格に規定がないため、暫定で「最大運転 = 定格運転」と本書で定めた。
-- 1〜5 章をすべて執筆済み (1 章: 目的、準拠する規格、対象範囲、本書の構成、用語、記号と表記)。
+- 1〜6 章をすべて執筆済み (1 章: 目的、準拠する規格、対象範囲、本書の構成、用語、記号と表記。6 章: 試算例)。
 - 計算プログラム (`src/jis_c9612/`)を実装済み (冷房・暖房・APF、TOML の入力ファイル、画面と CSV の出力、コマンド `jis-c9612`)。テスト 58 件 (`tests/`)はすべて通過。
 
 ## 次の作業(候補)
@@ -115,6 +119,7 @@ conda run -n JIS_C9612 jis-c9612 examples/example_tokyo.toml  # コマンドで�
 
 ### 2026-11-18
 
+- `notes/case_studies.ipynb` で例の機種の試算と分析 (5 ケース) を行い、6 章「試算例」を論文の形で執筆。Notebook 用に pandas・ipykernel・nbclient を環境に追加
 - Read the Docs のプロジェクト (slug: jis-c9612、言語: Japanese) を登録済み。README のリンクを言語に依存しないトップページに、バッジを app.readthedocs.org の URL に変更
 - Read the Docs の設定 `.readthedocs.yaml` を追加し、README にドキュメントへのリンクとバッジを付けた (Read the Docs 側のプロジェクト登録は担当者が行う)
 - GitHub Actions の actions/checkout と actions/setup-python を v7 に更新 (Node.js 20 廃止の警告への対応。v7 は Node.js 24 で動く)

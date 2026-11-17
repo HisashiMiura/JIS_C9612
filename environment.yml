@@ -5,6 +5,9 @@ dependencies:
   - python=3.12
   - matplotlib  # docs/figures/make_figures.py で図を作成する
   - pytest  # tests/ のテスト
+  - pandas  # notes/ の Notebook で試算結果を表にする
+  - ipykernel  # notes/ の Notebook を conda 環境で実行する
+  - nbclient  # notes/ の Notebook をコマンドから実行する
   - pip
   - pip:
       - -r docs/requirements.txt

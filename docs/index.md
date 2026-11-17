@@ -11,4 +11,5 @@
 03_method
 04_rationale
 05_symbols
+06_case_studies
 ```

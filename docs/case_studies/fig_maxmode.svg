@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="244.8pt" viewBox="0 0 432 244.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 244.8 
+L 432 244.8 
+L 432 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 38.66625 216.4475 
+L 421.2 216.4475 
+L 421.2 10.8 
+L 38.66625 10.8 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m4c0c5a5800" d="M 0 0 
+L 0 3.5 
+" style="stroke: #52514e; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4c0c5a5800" x="100.172694" y="216.4475" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #52514e" x="100.172694" y="232.2475" transform="rotate(-0 100.172694 232.2475)">東京 (ずらさない)</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m4c0c5a5800" x="229.933125" y="216.4475" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #52514e" x="229.933125" y="232.2475" transform="rotate(-0 229.933125 232.2475)">寒い側に 4 ℃</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m4c0c5a5800" x="359.693556" y="216.4475" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #52514e" x="359.693556" y="232.2475" transform="rotate(-0 359.693556 232.2475)">寒い側に 8 ℃</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_4">
+      <path d="M 38.66625 216.4475 
+L 421.2 216.4475 
+" clip-path="url(#p41a973a365)" style="fill: none; stroke: #d9d8d4; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_5">
+      <defs>
+       <path id="m6b3cdf6915" d="M 0 0 
+L -3.5 0 
+" style="stroke: #52514e; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m6b3cdf6915" x="38.66625" y="216.4475" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="31.66625" y="220.8475" transform="rotate(-0 31.66625 220.8475)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6">
+      <path d="M 38.66625 176.899904 
+L 421.2 176.899904 
+" clip-path="url(#p41a973a365)" style="fill: none; stroke: #d9d8d4; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m6b3cdf6915" x="38.66625" y="176.899904" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="31.66625" y="181.299904" transform="rotate(-0 31.66625 181.299904)">1</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8">
+      <path d="M 38.66625 137.352308 
+L 421.2 137.352308 
+" clip-path="url(#p41a973a365)" style="fill: none; stroke: #d9d8d4; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m6b3cdf6915" x="38.66625" y="137.352308" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="31.66625" y="141.752308" transform="rotate(-0 31.66625 141.752308)">2</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <path d="M 38.66625 97.804712 
+L 421.2 97.804712 
+" clip-path="url(#p41a973a365)" style="fill: none; stroke: #d9d8d4; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m6b3cdf6915" x="38.66625" y="97.804712" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="31.66625" y="102.204712" transform="rotate(-0 31.66625 102.204712)">3</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_12">
+      <path d="M 38.66625 58.257115 
+L 421.2 58.257115 
+" clip-path="url(#p41a973a365)" style="fill: none; stroke: #d9d8d4; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m6b3cdf6915" x="38.66625" y="58.257115" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="31.66625" y="62.657115" transform="rotate(-0 31.66625 62.657115)">4</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_14">
+      <path d="M 38.66625 18.709519 
+L 421.2 18.709519 
+" clip-path="url(#p41a973a365)" style="fill: none; stroke: #d9d8d4; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m6b3cdf6915" x="38.66625" y="18.709519" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="31.66625" y="23.109519" transform="rotate(-0 31.66625 23.109519)">5</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 10px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="19.256875" y="113.62375" transform="rotate(-90 19.256875 113.62375)">HSPF (−)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 56.054148 216.4475 
+L 97.577486 216.4475 
+L 97.577486 37.061447 
+L 56.054148 37.061447 
+z
+" clip-path="url(#p41a973a365)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 185.814579 216.4475 
+L 227.337916 216.4475 
+L 227.337916 56.8087 
+L 185.814579 56.8087 
+z
+" clip-path="url(#p41a973a365)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 315.575009 216.4475 
+L 357.098347 216.4475 
+L 357.098347 83.942151 
+L 315.575009 83.942151 
+z
+" clip-path="url(#p41a973a365)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 102.767903 216.4475 
+L 144.291241 216.4475 
+L 144.291241 37.108375 
+L 102.767903 37.108375 
+z
+" clip-path="url(#p41a973a365)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 232.528334 216.4475 
+L 274.051671 216.4475 
+L 274.051671 61.506186 
+L 232.528334 61.506186 
+z
+" clip-path="url(#p41a973a365)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 362.288764 216.4475 
+L 403.812102 216.4475 
+L 403.812102 102.326516 
+L 362.288764 102.326516 
+z
+" clip-path="url(#p41a973a365)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 38.66625 216.4475 
+L 38.66625 10.8 
+" style="fill: none; stroke: #52514e; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 38.66625 216.4475 
+L 421.2 216.4475 
+" style="fill: none; stroke: #52514e; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="76.815817" y="34.004068" transform="rotate(-0 76.815817 34.004068)">4.54</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="206.576247" y="53.75132" transform="rotate(-0 206.576247 53.75132)">4.04</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="336.336678" y="80.884771" transform="rotate(-0 336.336678 80.884771)">3.35</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="123.529572" y="34.050995" transform="rotate(-0 123.529572 34.050995)">4.53</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="253.290003" y="58.448806" transform="rotate(-0 253.290003 58.448806)">3.92</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="383.050433" y="99.269136" transform="rotate(-0 383.050433 99.269136)">2.89</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_11">
+     <path d="M 324.9 26.82 
+L 342.9 26.82 
+L 342.9 20.52 
+L 324.9 20.52 
+z
+" style="fill: #eb6834"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="350.1" y="26.82" transform="rotate(-0 350.1 26.82)">最大モードあり</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 324.9 40.32 
+L 342.9 40.32 
+L 342.9 34.02 
+L 324.9 34.02 
+z
+" style="fill: #2a78d6"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 9px; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="350.1" y="40.32" transform="rotate(-0 350.1 40.32)">最大モードなし</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p41a973a365">
+   <rect x="38.66625" y="10.8" width="382.53375" height="205.6475"/>
+  </clipPath>
+ </defs>
+</svg>
