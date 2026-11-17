@@ -367,7 +367,100 @@ def heating_power() -> None:
     plt.close(fig)
 
 
+def _style(ax) -> None:
+    ax.grid(axis="y", color=GRID, lw=0.8)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+
+
+def cooling_plf() -> None:
+    """式 (部分負荷率) の図: 運転率と部分負荷率の関係。"""
+    fig, ax = plt.subplots(figsize=(6.0, 4.0))
+    fig.patch.set_facecolor("white")
+    ax.plot([0, 1], [1 - C_D, 1], color=C_LOAD, lw=2, zorder=3)
+    ax.axhline(1.0, color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
+    ax.text(0.02, 1.006, "効率の低下がない場合 ($F_\\mathrm{PL} = 1$)", color=INK_2, fontsize=9, va="bottom")
+
+    # 例: 外気 26 ℃
+    t = 26.0
+    x = load(t) / cap(PHI_HAF_35, t)
+    f = 1 - C_D * (1 - x)
+    ax.plot([x, x], [0.7, f], color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
+    ax.plot([0, x], [f, f], color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
+    ax.plot(x, f, "o", ms=8, mfc="white", mec=INK, mew=1.5, zorder=4)
+    ax.annotate(f"例: 外気 26 ℃\n$X$ = {x:.3f}、$F_\\mathrm{{PL}}$ = {f:.3f}", (x, f), xytext=(14, -34),
+                textcoords="offset points", color=INK, fontsize=9)
+    ax.annotate("停止時間が長いほど\n効率が下がる", (0.08, 1 - C_D * 0.92), xytext=(18, 34),
+                textcoords="offset points", color=INK_2, fontsize=9,
+                arrowprops={"arrowstyle": "-", "color": INK_2, "lw": 0.8})
+    ax.text(0.0, 1 - C_D - 0.012, f"$1 - C_\\mathrm{{D}}$ = {1 - C_D:.2f}", color=INK, fontsize=9, ha="left", va="top")
+
+    ax.set_xlim(0, 1.0)
+    ax.set_ylim(0.7, 1.04)
+    ax.set_xlabel("運転率 $X(t_j)$")
+    ax.set_ylabel("部分負荷率 $F_\\mathrm{PL}(t_j)$")
+    _style(ax)
+    fig.tight_layout()
+    fig.savefig(OUT_DIR / "cooling_plf.svg", metadata={"Date": None})
+    plt.close(fig)
+
+
+def cooling_eer() -> None:
+    """式 (可変運転の EER) の図: 交点温度の間の直線補間。"""
+    tb, tc = t_cross(PHI_FUL_35), t_cross(PHI_HAF_35)
+    e_haf = cap(PHI_HAF_35, tc) / pow_(P_HAF_35, tc)
+    e_ful = cap(PHI_FUL_35, tb) / pow_(P_FUL_35, tb)
+
+    def e_hf(t):
+        return e_haf + (e_ful - e_haf) / (tb - tc) * (t - tc)
+
+    x0, x1 = 26.0, 37.0
+    fig, ax = plt.subplots(figsize=(7.2, 4.2))
+    fig.patch.set_facecolor("white")
+    ax.axvspan(tc, tb, color="#f0efec", zorder=0)
+
+    # 参考: 中間運転・定格運転で連続運転したときの EER
+    n = 100
+    ts = [x0 + (x1 - x0) * i / n for i in range(n + 1)]
+    ax.plot(ts, [cap(PHI_HAF_35, t) / pow_(P_HAF_35, t) for t in ts], color=C_HAF, lw=1.2, ls=(0, (4, 3)),
+            label="中間運転の EER $\\Phi_\\mathrm{haf}(t) / P_\\mathrm{haf}(t)$")
+    ax.plot(ts, [cap(PHI_FUL_35, t) / pow_(P_FUL_35, t) for t in ts], color=C_FUL, lw=1.2, ls=(0, (4, 3)),
+            label="定格運転の EER $\\Phi_\\mathrm{ful}(t) / P_\\mathrm{ful}(t)$")
+    # 補間線
+    ax.plot([tc, tb], [e_haf, e_ful], color=INK, lw=2, zorder=3,
+            label="可変運転の EER $E_\\mathrm{ER,hf}(t_j)$")
+    tj = [t for t in range(30, 36)]
+    ax.plot(tj, [e_hf(t) for t in tj], "o", ms=5, mfc="white", mec=INK, mew=1.2, zorder=4,
+            label="温度区分 $t_j$ ごとの値")
+    for t, e, name in ((tc, e_haf, "$E_\\mathrm{ER,haf}(t_\\mathrm{c})$"), (tb, e_ful, "$E_\\mathrm{ER,ful}(t_\\mathrm{b})$")):
+        ax.plot(t, e, "o", ms=9, mfc=INK, mec=INK, zorder=5)
+        ax.annotate(f"{name}\n= {e:.2f}", (t, e), xytext=(8, 6), textcoords="offset points", color=INK, fontsize=9)
+        ax.plot([t, t], [3.45, 6.8], color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
+    ax.annotate("$t_\\mathrm{c}$", (tc, 0), xytext=(0, -18), textcoords="offset points", xycoords=("data", "axes fraction"),
+                ha="center", va="top", color=INK, fontsize=11, annotation_clip=False)
+    ax.annotate("$t_\\mathrm{b}$", (tb, 0), xytext=(0, -18), textcoords="offset points", xycoords=("data", "axes fraction"),
+                ha="center", va="top", color=INK, fontsize=11, annotation_clip=False)
+    ax.text((tc + tb) / 2, 6.55, "可変運転", ha="center", va="center", color=INK, fontsize=10.5)
+
+    ax.set_xlim(x0, x1)
+    ax.set_ylim(2.2, 6.8)
+    ax.set_xticks(range(26, 38, 1))
+    ax.set_xlabel("外気温度 $t$ (℃)", labelpad=14)
+    ax.set_ylabel("エネルギー消費効率 EER (−)")
+    _style(ax)
+    leg = ax.legend(loc="lower center", ncol=2, frameon=False, fontsize=9, handlelength=2.2, columnspacing=1.5)
+    for t in leg.get_texts():
+        t.set_color(INK)
+    fig.tight_layout()
+    fig.savefig(OUT_DIR / "cooling_eer.svg", metadata={"Date": None})
+    plt.close(fig)
+    print(f"EER: haf(tc) = {e_haf:.3f}, ful(tb) = {e_ful:.3f}")
+
+
 if __name__ == "__main__":
+    cooling_plf()
+    cooling_eer()
     cooling_regions()
     cooling_power()
     heating_regions()
