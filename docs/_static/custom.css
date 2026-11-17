@@ -89,3 +89,37 @@ div.math > span.eqno {
 .rst-content table.docutils th {
     white-space: normal;
 }
+
+/* 用語の定義 (JIS・ISO の用語の節のように、用語名の下に定義を書く)
+   MyST では次のように書く:
+     :::{container} terms
+     用語
+     : 定義の文。
+     :::                                                                  */
+.rst-content div.terms > dl {
+    margin: 0 0 24px 0;
+}
+
+.rst-content div.terms > dl > dt {
+    display: block;
+    margin: 18px 0 4px 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.rst-content div.terms > dl > dt:first-child {
+    margin-top: 0;
+}
+
+.rst-content div.terms > dl > dd {
+    margin: 0;
+    padding: 0;
+}
+
+.rst-content div.terms > dl > dd > p {
+    margin: 0;
+}
