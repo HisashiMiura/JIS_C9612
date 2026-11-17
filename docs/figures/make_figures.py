@@ -200,6 +200,175 @@ def cooling_power() -> None:
         print(f"{t:>3} ℃  {st}  P = {v:7.1f} W")
 
 
+# ======================================================================
+# 暖房
+# ======================================================================
+C_EXT = "#eda100"  # 最大運転能力(基準パレットのカテゴリ色 4 番)
+
+H_T0, H_T100 = 17.0, 0.0
+H_K = 0.82 * 1.25 * PHI_T100  # 外気 0 ℃における想定暖房空調負荷 (W)
+# 試験値の例 (W)
+H_PHI_FUL_7, H_P_FUL_7 = 3600.0, 900.0
+H_PHI_HAF_7, H_P_HAF_7 = 1800.0, 360.0
+H_PHI_EXTF_2, H_P_EXTF_2 = 4200.0, 1500.0
+
+
+def _h_lines():
+    """3 章の暖房の式と同じ計算で、能力・消費電力の特性線と交点温度を求める。"""
+    ful_m7, pful_m7 = 0.64 * H_PHI_FUL_7, 0.82 * H_P_FUL_7
+    haf_m7, phaf_m7 = 0.64 * H_PHI_HAF_7, 0.82 * H_P_HAF_7
+    ext_2, pext_2 = 1.12 * H_PHI_EXTF_2, 1.06 * H_P_EXTF_2
+    ext_m7, pext_m7 = 0.734 * ext_2, 0.877 * pext_2
+
+    def at2(m7, v7):
+        return m7 + (v7 - m7) / 14 * 9
+
+    fulf_2, pfulf_2 = at2(ful_m7, H_PHI_FUL_7) / 1.12, at2(pful_m7, H_P_FUL_7) / 1.06
+    haff_2, phaff_2 = at2(haf_m7, H_PHI_HAF_7) / 1.12, at2(phaf_m7, H_P_HAF_7) / 1.06
+
+    def line(m7, v, tt):
+        return lambda t: m7 + (v - m7) / (tt + 7) * (t + 7)
+
+    def cross(m7, v, tt):
+        return (H_K * H_T0 * (tt + 7) - (tt * m7 + 7 * v) * (H_T0 - H_T100)) / (
+            H_K * (tt + 7) + (v - m7) * (H_T0 - H_T100))
+
+    nf = {
+        "ful": (line(ful_m7, H_PHI_FUL_7, 7), line(pful_m7, H_P_FUL_7, 7), cross(ful_m7, H_PHI_FUL_7, 7)),
+        "haf": (line(haf_m7, H_PHI_HAF_7, 7), line(phaf_m7, H_P_HAF_7, 7), cross(haf_m7, H_PHI_HAF_7, 7)),
+        "ext": (line(ext_m7, ext_2, 2), line(pext_m7, pext_2, 2), cross(ext_m7, ext_2, 2)),
+    }
+    fr = {
+        "ful": (line(ful_m7, fulf_2, 2), line(pful_m7, pfulf_2, 2), cross(ful_m7, fulf_2, 2)),
+        "haf": (line(haf_m7, haff_2, 2), line(phaf_m7, phaff_2, 2), cross(haf_m7, haff_2, 2)),
+        "ext": (line(ext_m7, H_PHI_EXTF_2, 2), line(pext_m7, H_P_EXTF_2, 2), cross(ext_m7, H_PHI_EXTF_2, 2)),
+    }
+    return nf, fr
+
+
+def h_load(t: float) -> float:
+    return H_K * (H_T0 - t) / (H_T0 - H_T100)
+
+
+def h_frost(t: float) -> bool:
+    return -7 < t < 5.5
+
+
+def h_power(t: float) -> tuple[float, float, str]:
+    """外気温度 t での消費電力、うち補助電熱装置の消費電力、運転状態。"""
+    nf, fr = _h_lines()
+    d = fr if h_frost(t) else nf
+    lh = h_load(t)
+
+    def cop_at(k):
+        phi, pw, tx = d[k]
+        return phi(tx) / pw(tx), tx
+
+    if lh <= d["haf"][0](t):
+        x = lh / d["haf"][0](t)
+        return x * d["haf"][1](t) / (1 - C_D * (1 - x)), 0.0, "断続運転"
+    if lh <= d["ful"][0](t):
+        (c_ful, ta), (c_haf, td) = cop_at("ful"), cop_at("haf")
+        return lh / (c_ful + (c_haf - c_ful) / (td - ta) * (t - ta)), 0.0, "中間〜定格の可変運転"
+    if lh <= d["ext"][0](t):
+        (c_ext, th), (c_ful, ta) = cop_at("ext"), cop_at("ful")
+        return lh / (c_ext + (c_ful - c_ext) / (ta - th) * (t - th)), 0.0, "定格〜最大の可変運転"
+    rh = lh - d["ext"][0](t)
+    return d["ext"][1](t) + rh, rh, "最大運転"
+
+
+def heating_regions() -> None:
+    nf, fr = _h_lines()
+    x0, x1 = -8.0, 17.0
+    fig, ax = plt.subplots(figsize=(7.2, 4.6))
+    fig.patch.set_facecolor("white")
+    ax.axvspan(-7, 5.5, color="#f0efec", zorder=0)
+
+    ax.plot([x0, H_T0], [h_load(x0), h_load(H_T0)], color=C_LOAD, lw=2, label="想定暖房空調負荷 $L_\\mathrm{h}(t)$", zorder=3)
+    names = {"ext": ("最大運転能力", C_EXT), "ful": ("定格運転能力", C_FUL), "haf": ("中間運転能力", C_HAF)}
+    n = 200
+    for k, (name, col) in names.items():
+        # 無着霜時の特性(着霜領域の中は参考として細い破線)
+        a = [x0 + (-7 - x0) * i / n for i in range(n + 1)]
+        b = [5.5 + (x1 - 5.5) * i / n for i in range(n + 1)]
+        m = [-7 + 12.5 * i / n for i in range(n + 1)]
+        ax.plot(a, [nf[k][0](t) for t in a], color=col, lw=2, zorder=2, label=name)
+        ax.plot(b, [nf[k][0](t) for t in b], color=col, lw=2, zorder=2)
+        ax.plot(m, [nf[k][0](t) for t in m], color=col, lw=1, ls=(0, (3, 3)), zorder=1)
+        # 着霜時の特性
+        ax.plot(m, [fr[k][0](t) for t in m], color=col, lw=2, zorder=2)
+
+    ax.text(-0.75, 6150, "着霜領域", ha="center", va="center", color=INK, fontsize=10.5)
+    ax.text(11.25, 6150, "無着霜領域", ha="center", va="center", color=INK, fontsize=10.5)
+    ax.text(-7.5, 6150, "無着霜", ha="center", va="center", color=INK_2, fontsize=8.5)
+    ax.text(6.2, 3830, "破線: 着霜領域での\n無着霜時の特性 (参考)", ha="left", va="center", color=INK_2, fontsize=8.5)
+
+    ax.set_xlim(x0, x1)
+    ax.set_ylim(0, 6500)
+    ax.set_xticks(range(-8, 18, 2))
+    ax.set_xlabel("外気温度 $t$ (℃)")
+    ax.set_ylabel("負荷・能力 (W)")
+    ax.grid(axis="y", color=GRID, lw=0.8)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    leg = ax.legend(loc="upper right", bbox_to_anchor=(1.0, 0.90), frameon=False, fontsize=9, handlelength=1.6)
+    for t in leg.get_texts():
+        t.set_color(INK)
+    fig.tight_layout()
+    fig.savefig(OUT_DIR / "heating_regions.svg", metadata={"Date": None})
+    plt.close(fig)
+    _, _ = nf, fr
+    print("暖房の交点温度: " + ", ".join(
+        f"{a}{'(着霜)' if d is fr else ''} {d[a][2]:.2f} ℃" for d in (nf, fr) for a in ("haf", "ful", "ext")))
+
+
+def heating_power() -> None:
+    tj = list(range(-7, 17))
+    vals = [h_power(t) for t in tj]
+    fig, ax = plt.subplots(figsize=(7.2, 4.4))
+    fig.patch.set_facecolor("white")
+    ax.axvspan(-7, 5.5, color="#f0efec", zorder=0)
+
+    # 運転状態ごとの範囲(温度区分の境界は隣の区分との中点)
+    spans, start = [], 0
+    for i in range(1, len(tj) + 1):
+        if i == len(tj) or vals[i][2] != vals[start][2]:
+            spans.append((tj[start] - 0.5, tj[i - 1] + 0.5, vals[start][2]))
+            start = i
+    for k, (a, b, st) in enumerate(spans):
+        if k > 0:
+            ax.axvline(a, color=INK_2, lw=1, ls=(0, (3, 3)), zorder=1)
+    labels = {"断続運転": "断続運転", "中間〜定格の可変運転": "中間〜定格\nの可変運転",
+              "定格〜最大の可変運転": "定格〜最大\nの可変運転", "最大運転": "最大運転\n+補助電熱"}
+    for a, b, st in spans:
+        ax.text((a + b) / 2, 2350, labels[st], ha="center", va="center", color=INK, fontsize=9.5)
+
+    ax.plot(tj, [v[0] for v in vals], color=INK, lw=2, zorder=3, marker="o", ms=5, mfc="white", mec=INK, mew=1.2,
+            label="消費電力 $P(t_j)$ (補助電熱装置を含む)")
+    ax.bar(tj, [v[1] for v in vals], width=0.6, color=C_LOAD, alpha=0.35, zorder=2,
+           label="うち補助電熱装置 $P_\\mathrm{RH}(t_j)$")
+    ax.text(-0.75, 50, "着霜領域", ha="center", va="bottom", color=INK_2, fontsize=9)
+
+    ax.set_xlim(-8, 17)
+    ax.set_ylim(0, 2600)
+    ax.set_xticks(range(-8, 18, 2))
+    ax.set_xlabel("外気温度 $t$ (℃)")
+    ax.set_ylabel("消費電力 (W)")
+    ax.grid(axis="y", color=GRID, lw=0.8)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    leg = ax.legend(loc="upper right", bbox_to_anchor=(1.0, 0.86), frameon=False, fontsize=9, handlelength=1.8)
+    for t in leg.get_texts():
+        t.set_color(INK)
+    fig.tight_layout()
+    fig.savefig(OUT_DIR / "heating_power.svg", metadata={"Date": None})
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     cooling_regions()
     cooling_power()
+    heating_regions()
+    heating_power()
