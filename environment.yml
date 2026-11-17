@@ -4,6 +4,8 @@ channels:
 dependencies:
   - python=3.12
   - matplotlib  # docs/figures/make_figures.py で図を作成する
+  - pytest  # tests/ のテスト
   - pip
   - pip:
       - -r docs/requirements.txt
+      - -e .  # 計算プログラム (src/jis_c9612) を編集可能な形でインストール
