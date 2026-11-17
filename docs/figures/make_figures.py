@@ -7,6 +7,7 @@
 図中の数値は説明用の例であり、特定の機種の値ではない。
 """
 
+import logging
 from pathlib import Path
 
 import matplotlib
@@ -23,6 +24,10 @@ C_HAF = "#1baf7a"  # 中間運転能力
 INK = "#0b0b0b"
 INK_2 = "#52514e"
 GRID = "#d9d8d4"
+
+# フォントの候補は固定する (SVG に書き込まれ、見る側のブラウザが使えるフォントで表示する)。
+# この PC に入っていない候補があると matplotlib が通知を出すので、その通知は表示しない
+logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 
 plt.rcParams.update(
     {
